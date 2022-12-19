@@ -36,7 +36,7 @@ The time you spend on this test is not limited. The idea is to take your time, r
 
 ## Appreciated with the implementation
 
-⚠️ Those are expected for the Senior and Principal Engineer positions
+⚠️ Those are expected for Senior Engineer positions
 
 - Unit and functionnal tests: a 100% coverage is not necessary, just make them pertinent
 - Good accessibility practices
