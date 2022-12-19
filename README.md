@@ -24,9 +24,11 @@ You can find a link to the Figma [here](https://www.figma.com/file/PWNtHgOgjeYYG
 
 You can make any modifications or suggestions for modifications that you see fit. Fork this repository and deliver your results via a pull-request or send us an e-mail. You could also create a gist, for privacy reasons, and send us the link.
 
+During a technical interview, we will discuss this task and have a closer look at the code together with you. You should be able to explain your considerations of the code implementation. 
+
 ## Completion time
 
-The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it.
+The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it. But please let us know if there are circumstances delaying your submission of the code. 
 
 ## What we expect
 
