@@ -40,7 +40,7 @@ The time you spend on this test is not limited. The idea is to take your time, r
 
 ⚠️ Those are expected for Senior Engineer positions
 
-- Unit and functionnal tests: a 100% coverage is not necessary, just make them pertinent
+- Unit and functional tests: a 100% coverage is not necessary, just make them pertinent
 - Good accessibility practices
 - Usage of the state co-location pattern
 
