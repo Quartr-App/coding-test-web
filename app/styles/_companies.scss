@@ -1,13 +1,12 @@
 section.trending-companies {
   height: 100%;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 1rem auto;
   padding: 1rem;
   > h4 {
     font-size: 1rem;
-    opacity: .5;
+    opacity: 0.5;
     font-weight: 400;
-
   }
   .company {
     display: flex;
@@ -23,14 +22,14 @@ section.trending-companies {
     }
     .info {
       > p {
-        font-size: .9rem;
+        font-size: 0.9rem;
         font-weight: 700;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
       }
       > span {
         display: block;
-        font-size: .75rem;
-        opacity: .5;
+        font-size: 0.75rem;
+        opacity: 0.5;
         width: 15rem;
         white-space: nowrap;
         overflow: hidden;
@@ -40,13 +39,13 @@ section.trending-companies {
     .read-more {
       margin-left: auto;
       font-weight: bolder;
-      opacity: .4;
-      height: .8rem;
+      opacity: 0.4;
+      height: 0.8rem;
     }
   }
 
   // Mobile view
-  @media only screen and (max-width: 480px)  {
+  @media only screen and (max-width: 481px) {
     width: 100%;
     .company {
       .info {
@@ -59,32 +58,160 @@ section.trending-companies {
 }
 
 section.company-details {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
-  padding: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(1rem, 1fr));
-  grid-template-areas:
-  "logo logo"
-  "details event";
-  > img {
-    width: 100%;
-    height: 100%;
-    grid-area: logo;
-  }
-  .details {
-    grid-area: details;
-    > p {
-      width: 100%;
-      text-align: center;
-      padding: 3rem;
+  width: 100%;
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    .title {
+      font-size: 2rem;
     }
-    > span {
-      width: 100%;
+    > img {
+      margin-left: auto;
+      width: 8rem;
+      height: 3rem;
     }
   }
-  .event {
-    grid-area: event;
+  .main {
+    padding: 1rem 0 1rem 1rem;
+    margin-top: 3rem;
+    display: flex;
+    .details {
+      width: 70%;
+      padding-right: 4rem;
+      > h4 {
+        margin-bottom: 2rem;
+      }
+      > p {
+        line-height: 1.3rem;
+        width: 100%;
+      }
+    }
+    .event {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 30%;
+      background-color: white;
+      border-radius: 15px;
+      > h3 {
+        font-size: 1.5rem;
+        margin: 1rem 0 7rem 0;
+        margin-top: 3rem;
+      }
+      > span {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: 3rem;
+        > .icon {
+          margin: 0 1rem;
+          transform: translateY(2px);
+
+          > svg {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+      .footer {
+        display: flex;
+        flex-direction: column;
+        > button,
+        a {
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          padding: 1rem 1rem;
+          border-radius: 0.4em;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s ease;
+          &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+          }
+          &:active {
+            transform: translateY(2px);
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+
+          }
+
+          &.attend,
+          &.presentation {
+            color: #333;
+            &.light {
+              color: #ffffff;
+            }
+          }
+          &.buy-ticket {
+            color: white;
+          }
+        }
+      }
+    }
   }
 
+  // Desktop view
+  @media only screen and (max-width: 1025px) {
+    .main {
+      padding: 1rem;
+      .details {
+        width: 65%;
+      }
+      .event {
+        width: 35%;
+      }
+    }
+  }
+  // Tablet view
+  @media only screen and (max-width: 769px) {
+    .main {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+
+      .details {
+        width: 100%;
+        padding: 0;
+      }
+      .event {
+        margin-top: 5rem;
+        width: 70%;
+      }
+    }
+  }
+
+  // Mobile view
+  @media only screen and (max-width: 481px) {
+    .top {
+      align-content: center;
+      padding: 1rem;
+      flex-direction: column;
+      .title {
+        margin-bottom: 1rem;
+      }
+      > img {
+        margin: 1rem 0 0 0;
+      }
+    }
+    .main {
+      flex-direction: column;
+      padding: 1rem;
+
+      .event {
+        width: 100%;
+      }
+    }
+  }
 }
