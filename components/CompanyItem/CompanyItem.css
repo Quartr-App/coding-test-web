@@ -1,0 +1,133 @@
+:root {
+  --border-clr: #e2e2e2;
+  --hover-bg-clr: #f8f8f8;
+  --pdf-btn-bg-clr: #e46014;
+  --report-btn-bg-clr: #0077ff;
+  --pdf-btn-bg-clr-hover: #c55311;
+  --report-btn-bg-clr-hover: #0161cf;
+  --link-txt-clr: #fff;
+}
+
+.list-item {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 1rem;
+  background: linear-gradient(
+    45deg,
+    rgba(116, 116, 116, 1) 0%,
+    rgba(181, 181, 181, 1) 50%,
+    rgba(116, 116, 116, 1) 100%
+  );
+  color: black;
+}
+
+.company-item {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  max-height: max-content;
+  padding: 0.5rem 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.company-item__chevron {
+  transition: 0.2s linear;
+  transform-origin: center;
+}
+
+.company-item__chevron.open {
+  transform: rotateX(180deg);
+  transition: 0.2s linear;
+}
+
+.company-item__column img {
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+.company-item__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.company-item__company-name {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.company-item__description {
+  display: -webkit-box;
+  font-size: 14px;
+  overflow: hidden;
+  opacity: 0.5;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.company-item__description.open {
+  -webkit-line-clamp: unset;
+}
+
+.company-item__slideout {
+  display: block;
+}
+
+.company-item__slideout {
+  display: flex;
+  gap: 20px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.company-item__slideout.open {
+  max-height: max-content;
+}
+
+.company-item__slideout-content {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 4.5rem;
+}
+
+.company-item__headline {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.company-item__link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  color: var(--link-txt-clr);
+}
+
+.company-item__link--pdf {
+  background-color: var(--pdf-btn-bg-clr);
+}
+
+.company-item__link--report {
+  background-color: var(--report-btn-bg-clr);
+}
+
+@media screen and (max-width: 425px) {
+  .company-item__column {
+    flex-basis: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .company-item__link--pdf:hover {
+    background-color: var(--pdf-btn-bg-clr-hover);
+  }
+
+  .company-item__link--report:hover {
+    background-color: var(--report-btn-bg-clr-hover);
+  }
+}
