@@ -38,7 +38,7 @@ The time you spend on this test is not limited. The idea is to take your time, r
 
 ## Appreciated with the implementation
 
-⚠️ Those are expected for Senior Engineer positions
+⚠️ Those are not required, but can give you some advice how to make your task look even better.
 
 - Unit and functional tests: a 100% coverage is not necessary, just make them pertinent
 - Good accessibility practices
