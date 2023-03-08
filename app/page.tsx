@@ -1,9 +1,11 @@
 "use client";
 
 import { Inter } from "@next/font/google";
-import { useEffect, useState } from "react"; 
-import Company from "./interface/company_interface";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
+
+import { Company, CompanyListItem } from "./Company";
 
 export default function Home() {
     const [companies, setCompanies] = useState<Company[]>([]);
@@ -17,16 +19,34 @@ export default function Home() {
         };
 
         // call the function
-        fetchData()
-            // make sure to catch any error
-            .catch(console.error);
+        fetchData().catch((error) => {
+            console.error(error);
+        });
     }, []);
 
     return (
         <main>
             <h2 className={inter.className}>Quartr</h2>
             <p className={inter.className}>Trending companies</p>
-            <p>{JSON.stringify(companies)}</p>
+            <div>
+                {companies.map((company: Company) => (
+                    <CompanyListItem
+                        companyId={company.companyId}
+                        companyName={company.companyName}
+                        companyCountry={company.companyCountry}
+                        companyTicker={company.companyTicker}
+                        displayName={company.displayName}
+                        infoUrl={company.infoUrl}
+                        liveUrl={company.liveUrl}
+                        logoLightUrl={company.logoLightUrl}
+                        logoDarkUrl={company.logoDarkUrl}
+                        iconUrl={company.iconUrl}
+                        description={company.description}
+                        reportingCurrency={company.reportingCurrency}
+                        colorSettings={company.colorSettings}
+                    />
+                ))}
+            </div>
         </main>
     );
 }
