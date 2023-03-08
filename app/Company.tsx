@@ -24,7 +24,7 @@ const CompanyListItem = (c: Company): JSX.Element => {
     console.log(c.iconUrl);
 
     return (
-        <div>
+        <div id="companyListItem">
             <Image
                 src={"" + c.logoLightUrl}
                 alt='Company icon'
