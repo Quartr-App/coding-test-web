@@ -11,8 +11,9 @@ body {
 
 title,
 h1 {
-
+    font-family: "Inter";
 }
+
 h2 {
     width: 154px;
     height: 19px;
@@ -69,7 +70,7 @@ h2 {
     grid-column-start: 2;
     grid-row-start: 2;
     column-gap: 4px;
-    
+
     /* caption/r-13 */
     font-family: "Inter";
     font-style: normal;
