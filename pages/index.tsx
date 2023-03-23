@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
-import { Company, CompanyListItem } from "./Company";
+import { Company, CompanyListItem } from "../components/Company";
 
 export default function Home() {
     const [companies, setCompanies] = useState<Company[]>([]);
@@ -26,9 +26,9 @@ export default function Home() {
 
     return (
         <main>
-            <h2 className={inter.className}>Quartr</h2>
-            <p className={inter.className}>Trending companies</p>
-            <div>
+            <h1>Quartr</h1>
+            <h2>Trending companies</h2>
+            <div className="companyList">
                 {companies.map((company: Company) => (
                     <CompanyListItem
                         companyId={company.companyId}
