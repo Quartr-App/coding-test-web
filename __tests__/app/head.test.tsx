@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Head from "app/head"; 
+import Head from "@/app/head"; 
 
 describe("Head", () => {
     it("should render", async () => {
