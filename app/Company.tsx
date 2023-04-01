@@ -63,8 +63,8 @@ const CompanyListItem = (c: Company): JSX.Element => {
         <Image
           src={"" + c.logoDarkUrl}
           alt="Company icon"
-          width={45}
-          height={45}
+          width={40}
+          height={40}
         />
       </div>
 
