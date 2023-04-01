@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
-import styles from "@/styles/components/Company.module.css";
+import styles from "@/app/styles/company.module.css"
 
 interface Company {
     companyId: Number;
