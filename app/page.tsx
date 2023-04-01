@@ -6,7 +6,6 @@ import { Company, CompanyListItem } from "app/Company";
 export default function Home() {
   const [companies, setCompanies] = useState<Company[]>([]);
   useEffect(() => {
-    // declare the data fetching function
     const fetchData = async () => {
       const data_res = await fetch("/api/companies");
       const data_json = await data_res.json();
@@ -14,7 +13,6 @@ export default function Home() {
       setCompanies(data_json.data);
     };
 
-    // call the function
     fetchData().catch((error) => {
       console.error(error);
     });
