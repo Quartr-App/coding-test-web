@@ -29,11 +29,11 @@
   /* filter: brightness(0); */
 }
 .companyInfoBox {
-  width: 250;
+  display: grid;
+  min-width: 250px;
 
   padding: 4px;
   margin: 2px;
-  display: flex;
 }
 .companyName {
   padding: 4px;
@@ -41,7 +41,10 @@
   margin-bottom: 4px;
 }
 .companyCountyTicker {
+  grid-column-start: 1;
+  grid-row-start: 2;
   display: flex;
+  flex-direction: row;
 
   margin: 2px;
   padding: 4px;

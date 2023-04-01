@@ -69,23 +69,21 @@ const CompanyListItem = (c: Company): JSX.Element => {
       </div>
 
       <div className={styles.companyInfoBox}>
-        <div className={styles.companyName}>
-          {c.companyName}
-          <div className={styles.companyCountyTicker}>
-            <ReactCountryFlag
-              countryCode={c.companyCountry.toString()}
-              svg
-              style={{
-                width: "21px",
-                height: "15px",
-              }}
-            />
-            {c.companyTicker}
-            {open ? chevronClosed : chevronOpen}
-          </div>
-          <div className={styles.companyDescription}>
-            {open ? c.description : ""}
-          </div>
+        <div className={styles.companyName}>{c.companyName}</div>
+        <div className={styles.companyCountyTicker}>
+          <ReactCountryFlag
+            countryCode={c.companyCountry.toString()}
+            svg
+            style={{
+              width: "21px",
+              height: "15px",
+            }}
+          />
+          {c.companyTicker}
+          {open ? chevronClosed : chevronOpen}
+        </div>
+        <div className={styles.companyDescription}>
+          {open ? c.description : ""}
         </div>
       </div>
     </div>
