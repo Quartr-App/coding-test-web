@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
-import { Company, CompanyListItem } from "../components/Company";
+import { Company, CompanyListItem } from "@/components/Company";
 
 export default function Home() {
     const [companies, setCompanies] = useState<Company[]>([]);
