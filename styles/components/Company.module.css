@@ -1,0 +1,67 @@
+.companyListItem {
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+
+    cursor: pointer;
+}
+
+.companyListItem:hover {
+    background-color: #f2f2f2;
+}
+
+.chevronClosed,
+.chevronOpen {
+    margin-left: auto;
+}
+
+.imageContainer {
+    flex-shrink: 0;
+    
+    width: 52px;
+    height: 52px;
+    
+    padding: 2px;
+    margin: 8px;
+    margin-right: 8px;
+    
+    border: 1px solid #f2f2f2;
+    border-radius: 12px;
+    /* filter: brightness(0); */
+}
+.companyInfoBox {
+    width: 250; 
+
+    padding: 4px;
+    margin: 2px;
+    display: flex;
+}
+.companyName {
+    padding: 4px;
+    margin: 2px;
+    margin-bottom: 4px;
+}
+.companyCountyTicker {
+    display: flex;
+
+    margin: 2px;
+    padding: 4px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+
+    color: #999999;
+}
+.companyDescription { 
+
+    padding: 2px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #999999;
+}

@@ -1,8 +1,8 @@
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
+} */
 
 html,
 body {
@@ -27,70 +27,10 @@ h2 {
     /* color/grey/300 */
     color: #999999;
 }
-
 .companyList {
-    max-width: 100vw;
-}
-
-.companyListItem {
     display: grid;
-    justify-content: left;
-    width: 50vw;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #010101;
-    border-bottom: 1px solid #f2f2f2;
-    margin: 4px;
-    padding: 12px;
-    border: 5px solid #010101;
-    cursor: pointer;
-}
-.imageContainer {
-    grid-column-start: 1;
-    width: 52px;
-    height: 52px;
-    margin-right: 12px;
-    border: 1px solid #f2f2f2;
-    border-radius: 12px;
-    /* filter: brightness(0); */
-}
-.companyListItemInfo {
-    grid-column-start: 2;
-}
-.companyListItemName {
-    grid-column-start: 2;
-    margin-bottom: 4px;
-}
-.companyListItemCountyTicker {
-    grid-column-start: 2;
-    grid-row-start: 2;
-    column-gap: 4px;
-
-    /* caption/r-13 */
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-
-    color: #999999;
-}
-.companyListItemdescription {
-    grid-column-start: 2;
-    grid-row: 2;
-    /* caption/r-13 */
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-
-    /* identical to box height, or 123% */
-
-    color: #999999;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    max-width: 1200;
+    column-gap: 16px;
+    align-items: center;
 }
