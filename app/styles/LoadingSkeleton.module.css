@@ -12,17 +12,17 @@
     border-radius: 8px;
     height: 77px;
     width: 300px;
-    animation: pulse 1.5s infinite;
+    animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
     0% {
-        opacity: 0.4;
-    }
-    50% {
         opacity: 0.8;
     }
-    100% {
+    50% {
         opacity: 0.4;
+    }
+    100% {
+        opacity: 0.8;
     }
 }

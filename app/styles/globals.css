@@ -24,7 +24,7 @@ h2 {
 .companyList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 1200;
+    max-width: 800px;
     column-gap: 16px;
     row-gap: 8px;
     align-items: center;
