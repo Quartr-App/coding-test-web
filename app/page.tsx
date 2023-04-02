@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CompanyI } from "app/Company";
 import CompanyList from "./CompanyList";
 import LoadingSkeleton from "./LoadingSkeleton";
@@ -13,9 +13,7 @@ interface data_jsonI {
 export default function Home() {
     const [companies, setCompanies] = useState<CompanyI[]>([]);
     const [fetching, setFetching] = useState<boolean>(true);
-    const [loading, setLoading] = useState<boolean>(true);
     const [data_res_status, setdata_res_status] = useState<number>(500);
-    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,18 +22,14 @@ export default function Home() {
                 const data_res = await fetch("/api/companies");
 
                 if (data_res.status !== 200) {
-                    setLoading(false);
-                    setError("Failed to fetch data");
                     setdata_res_status(500);
                 } else if (data_res.status === 200) {
                     const data_json: data_jsonI = await data_res.json();
                     setCompanies(data_json.data);
-                    setLoading(false);
                     setdata_res_status(200);
                 }
             } catch (error) {
-                setLoading(false);
-                setError("There seems to be a server error");
+                setdata_res_status(500);
             }
             setFetching(false);
         };
