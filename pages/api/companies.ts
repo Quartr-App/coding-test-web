@@ -186,7 +186,7 @@ const data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<object>
 ) {
   res.status(200).json(data);
 }
