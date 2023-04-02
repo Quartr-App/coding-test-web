@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { CompanyI } from "app/Company";
-import CompanyList from "./CompanyList"; 
+import CompanyList from "./CompanyList";
 import LoadingSkeleton from "./LoadingSkeleton";
 import ErrorComponent from "./error";
 
@@ -22,7 +22,6 @@ export default function Home() {
             setFetching(true);
             try {
                 const data_res = await fetch("/api/companies");
-                console.log(data_res.status);
 
                 if (data_res.status !== 200) {
                     setLoading(false);
@@ -48,13 +47,7 @@ export default function Home() {
         <main>
             <h1>Quartr</h1>
             <h2>Trending companies</h2>
-            {fetching ? (
-                <LoadingSkeleton/>
-            ) : data_res_status != 200 ? (
-                <ErrorComponent />
-            ) : (
-                <CompanyList companies={companies} />
-            )}
+            {fetching ? <LoadingSkeleton /> : data_res_status != 200 ? <ErrorComponent /> : <CompanyList companies={companies} />}
         </main>
     );
 }
