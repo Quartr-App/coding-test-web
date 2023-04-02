@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Company, CompanyListItem } from "app/Company";
+import { CompanyI, CompanyListItem } from "app/Company";
 
 export default function Home() {
-  const [companies, setCompanies] = useState<Company[]>([]);
+  const [companies, setCompanies] = useState<CompanyI[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       const data_res = await fetch("/api/companies");
       const data_json = await data_res.json();
-      console.log(data_json.data);
+      
       setCompanies(data_json.data);
     };
 
@@ -23,8 +23,8 @@ export default function Home() {
       <h1>Quartr</h1>
       <h2>Trending companies</h2>
       <div className="companyList">
-        {companies.map((company: Company) => (
-          <CompanyListItem
+        {companies.map((company: CompanyI) => (
+          <CompanyListItem key={company.companyId}
             companyId={company.companyId}
             companyName={company.companyName}
             companyCountry={company.companyCountry}
