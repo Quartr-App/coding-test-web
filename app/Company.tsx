@@ -3,35 +3,35 @@ import { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import styles from "@/app/styles/company.module.css";
 
-interface Company {
-  companyId: Number;
-  companyName: String;
-  companyCountry: String;
-  companyTicker: String;
-  displayName: String;
-  infoUrl: String;
-  liveUrl: String;
-  logoLightUrl: String;
-  logoDarkUrl: String;
+interface CompanyI {
+  companyId: number;
+  companyName: string;
+  companyCountry: string;
+  companyTicker: string;
+  displayName: string;
+  infoUrl: string;
+  liveUrl: string;
+  logoLightUrl: string;
+  logoDarkUrl: string;
   iconUrl: string;
-  description: String;
-  reportingCurrency: String;
+  description: string;
+  reportingCurrency: string;
   colorSettings: {
-    brandColor: String;
+    brandColor: string;
   };
 }
 
-const CompanyListItem = (c: Company): JSX.Element => {
+const CompanyListItem = (c: CompanyI): JSX.Element => {
   const [open, setOPen] = useState(false);
   const chevronClosed = (
     <svg
       className={styles.chevronClosed}
       stroke="currentColor"
       fill="none"
-      stroke-width="2"
+      strokeWidth="2"
       viewBox="0 0 24 24"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       height="16"
       width="16"
       xmlns="http://www.w3.org/2000/svg"
@@ -39,15 +39,16 @@ const CompanyListItem = (c: Company): JSX.Element => {
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
   );
+  
   const chevronOpen = (
     <svg
       className={styles.chevronOpen}
       stroke="currentColor"
       fill="none"
-      stroke-width="2"
+      strokeWidth="2"
       viewBox="0 0 24 24"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       height="16"
       width="16"
       xmlns="http://www.w3.org/2000/svg"
@@ -91,4 +92,4 @@ const CompanyListItem = (c: Company): JSX.Element => {
 };
 
 export { CompanyListItem };
-export type { Company };
+export type { CompanyI };
