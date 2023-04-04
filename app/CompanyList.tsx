@@ -1,5 +1,5 @@
 import React from "react";
-import { CompanyI, CompanyListItem } from "./Company";
+import { CompanyI, CompanyListItem } from "./CompanyListItem";
 
 interface CompanyListProps {
     companies: CompanyI[];

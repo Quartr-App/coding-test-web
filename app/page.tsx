@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CompanyI } from "app/Company";
+import { CompanyI } from "@/app/CompanyListItem";
 import CompanyList from "./CompanyList";
 import LoadingSkeleton from "./LoadingSkeleton";
 import ErrorComponent from "./error";
