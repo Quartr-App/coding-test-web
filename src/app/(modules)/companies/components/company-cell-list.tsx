@@ -22,7 +22,7 @@ export function CompanyCellList() {
   })
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col">
       {isLoading && Array.from({ length: SKELETON_COUNT }).map((_, index) => <CompanyCellSkeleton key={index} />)}
       {error && <p className="text-red-500">{error instanceof Error ? error.message : "An error occurred"}</p>}
       {(companies?.length ?? 0) > 0 && companies?.map((company) => <CompanyCell key={company.companyId} company={company} />)}
