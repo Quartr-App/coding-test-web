@@ -28,7 +28,7 @@ export interface Company {
   iconUrl: string
   description: string
   reportingCurrency: string
-  colorSettings: ColorSettings
+  colorSettings: ColorSettings | undefined
   events: Event[]
   isins: unknown[]
 }
