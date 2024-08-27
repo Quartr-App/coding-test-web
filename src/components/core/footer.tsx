@@ -1,7 +1,7 @@
 "use client"
 
 import { Icon } from "@/components/core"
-import { Eclipse, Moon, Sun } from "lucide-react"
+import { Eclipse } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
 

@@ -1,19 +1,4 @@
-interface ColorSettings {
-  brandColor: string
-}
-
-interface Event {
-  reportUrl: string
-  pdfUrl: string | null
-  eventId: number
-  eventTitle: string
-  eventDate: string
-  qnaTimestamp: string | null
-  fiscalPeriod: string
-  fiscalYear: string
-}
-
-type CompanyLocale = "NO" | "FI"
+import { ColorSettings, CompanyLocale } from "@/companies/types"
 
 export interface Company {
   companyId: number
@@ -31,8 +16,4 @@ export interface Company {
   colorSettings: ColorSettings | undefined
   events: Event[]
   isins: unknown[]
-}
-
-export interface CompanyCellProps {
-  company: Company
 }

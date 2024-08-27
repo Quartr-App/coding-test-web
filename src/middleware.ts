@@ -10,6 +10,7 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return NextResponse.next()
   }
 
+  // If the pathname is the root, redirect to the companies page
   if (pathname === "/" || pathname === "") {
     url.pathname = "/companies"
     return NextResponse.redirect(url)

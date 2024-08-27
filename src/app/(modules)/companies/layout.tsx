@@ -1,10 +1,11 @@
 import { Footer, Header } from "@/components/core"
+import { CompaniesLayoutProps } from "@/companies/types"
 
 export const metadata = {
   title: "Trending Companies"
 }
 
-export default function CompaniesLayout({ children }: { children: React.ReactNode }) {
+export default function CompaniesLayout({ children }: CompaniesLayoutProps) {
   return (
     <>
       <Header />
