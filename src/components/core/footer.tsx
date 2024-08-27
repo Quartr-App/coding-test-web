@@ -1,7 +1,7 @@
 "use client"
 
 import { Icon } from "@/components/core"
-import { Moon, Sun } from "lucide-react"
+import { Eclipse, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
 
@@ -18,7 +18,7 @@ export function Footer() {
           <p className="text-xs text-muted-foreground font-light">© 2024 Quartr AB</p>
         </div>
         <button className="transition text-muted-foreground hover:text-foreground" onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
-          {resolvedTheme === "light" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+          <Eclipse className="w-4 h-4" />
         </button>
       </div>
     </footer>
