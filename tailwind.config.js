@@ -9,7 +9,8 @@ module.exports = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))"
-        }
+        },
+        border: "hsl(var(--border))"
       }
     }
   },

@@ -1,6 +1,7 @@
 "use client"
 
 import { isServer, QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
 
 function makeQueryClient() {
   return new QueryClient({
@@ -37,5 +38,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   //       render if it suspends and there is no boundary
   const queryClient = getQueryClient()
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  return (
+    <NextThemesProvider themes={["light", "dark"]} attribute="class" defaultTheme="system">
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </NextThemesProvider>
+  )
 }
