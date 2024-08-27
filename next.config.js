@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  trailingSlash: true,
+  images: {
+    domains: ["files.quartr.com"]
+  }
 }
 
 module.exports = nextConfig
