@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
+  images: {
+    domains: ["files.quartr.com"], // Whitelist this domain
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
