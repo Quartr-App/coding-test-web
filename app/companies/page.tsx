@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Metadata } from "next";
 import { getCompanies } from "@/app/lib/actions";
 import { CompanyList } from "@/app/ui";
@@ -13,9 +12,7 @@ export default async function Page() {
 
   return (
     <>
-      <Suspense fallback={<p>Loading companies...</p>}>
-        <CompanyList companies={companies} />
-      </Suspense>
+      <CompanyList companies={companies} />
     </>
   );
 }

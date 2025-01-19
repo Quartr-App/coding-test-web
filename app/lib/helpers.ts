@@ -40,3 +40,11 @@ export function formatDate(dateString: string): string {
   const year = date.getUTCFullYear();
   return `${day}/${month}/${year}`;
 }
+/**
+ * Creates a delay for the specified duration (defaults to 1000ms)
+ * can be used to simulate network latency or loading states
+ *
+ */
+export function delay(ms = 1000): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

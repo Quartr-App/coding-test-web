@@ -107,6 +107,7 @@
 
 		&:hover {
 		  background: #e5e7eb;
+		  border: 2.5px solid black;
 		}
 	  }
 	}

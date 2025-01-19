@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Metadata } from "next/types";
 import { notFound } from "next/navigation";
 import { getCompany } from "@/app/lib/actions";
@@ -38,9 +37,7 @@ export default async function Page(props: Props) {
 
   return (
     <>
-      <Suspense fallback={<p>Loading detail page...</p>}>
-        <DetailCompany company={company} />
-      </Suspense>
+      <DetailCompany company={company} />
     </>
   );
 }

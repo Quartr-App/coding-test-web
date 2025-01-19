@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Inter } from "next/font/google";
 import { formatDate } from "@/app/lib/helpers";
 import type { Company } from "@/app/lib/types";
@@ -14,12 +12,6 @@ interface CompanyListProps {
 }
 
 export function CompanyList({ companies }: CompanyListProps) {
-  const router = useRouter();
-
-  const onCompanySelect = (company: Company) => {
-    router.push(`companies/${company.companyId}`);
-  };
-
   return (
     <div className={`companies-container ${inter.className}`}>
       <h1 className="companies-title">Companies</h1>
@@ -73,12 +65,13 @@ export function CompanyList({ companies }: CompanyListProps) {
               </div>
 
               <div className="company-links">
-                <button
-                  onClick={() => onCompanySelect(company)}
+                <Link
+                  href={`/companies/${company.companyId}`}
                   className="link-button"
+                  prefetch={true}
                 >
                   Show Detail ↗
-                </button>
+                </Link>
               </div>
             </div>
 

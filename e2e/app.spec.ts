@@ -74,7 +74,7 @@ test.describe("Companies", () => {
     await navigateTo(page, "/companies");
 
     const detailButton = page
-      .getByRole("button", { name: /show detail/i })
+      .getByRole("link", { name: /show detail/i })
       .first();
     await detailButton.click();
 

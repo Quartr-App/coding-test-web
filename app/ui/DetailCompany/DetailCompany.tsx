@@ -1,14 +1,16 @@
 import React from "react";
+import { Inter } from "next/font/google";
 import type { Company } from "@/app/lib/types";
 import "./DetailCompany.css";
 
+const inter = Inter({ subsets: ["latin"] });
 interface DetailCompanyProps {
   company: Company;
 }
 
 export function DetailCompany({ company }: DetailCompanyProps) {
   return (
-    <div className="detail-container">
+    <div className={`detail-container ${inter.className}`}>
       <div
         className="detail-card"
         style={{ borderTop: `4px solid ${company.colorSettings.brandColor}` }}
