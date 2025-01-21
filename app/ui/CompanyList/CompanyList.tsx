@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import { formatDate } from "@/app/lib/helpers";
 import type { Company } from "@/app/lib/types";
 import "./CompanyList.css";
@@ -27,9 +28,11 @@ export function CompanyList({ companies }: CompanyListProps) {
             <div className="company-content">
               <div className="company-header">
                 {company.logoLightUrl && (
-                  <img
+                  <Image
                     src={company.logoLightUrl}
                     alt={company.displayName}
+                    width={48}
+                    height={48}
                     className="company-logo"
                   />
                 )}

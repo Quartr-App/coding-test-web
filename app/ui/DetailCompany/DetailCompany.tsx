@@ -1,5 +1,6 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 import type { Company } from "@/app/lib/types";
 import "./DetailCompany.css";
 
@@ -18,9 +19,11 @@ export function DetailCompany({ company }: DetailCompanyProps) {
         <div className="detail-header">
           <div className="header-content">
             {company.logoLightUrl && (
-              <img
+              <Image
                 src={company.logoLightUrl}
                 alt={company.displayName}
+                width={48}
+                height={48}
                 className="company-logo"
               />
             )}
