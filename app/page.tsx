@@ -1,31 +1,49 @@
 "use client";
 
-import { Inter } from "@next/font/google";
 import { useEffect, useState } from "react";
-const inter = Inter({ subsets: ["latin"] });
+
+import ListTitle from './components/ListTitle/ListTitle';
+import ListItem  from './components/ListItem/ListItem';
+import Loader from "./components/Loader/Loader";
+import Error from "./components/Error/Error";
+
+import { CompanyData } from '../types/companyData';
 
 export default function Home() {
-  const [stuff1, setStuff1] = useState<any>([]);
-  useEffect(() => {
-    // declare the data fetching function
-    const fetchData = async () => {
-      const data = await fetch("/api/companies");
-      const data2 = await data.json();
-      console.log(data2);
-      setStuff1(data2);
-    };
+  const [companyData, setCompanyData] = useState<CompanyData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const responseData = await fetch("/api/companies");
+        const companyData = await responseData.json();
+        setCompanyData(companyData.data);
+      } catch (error: any) {
+        setError(error.message || "Ooops! Something went wrong.");
+        setCompanyData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
     <main>
-      <h2 className={inter.className}>Quartr</h2>
-      <p className={inter.className}>Trending companies</p>
-      <p>{JSON.stringify(stuff1)}</p>
+      <ListTitle listTitle="Trending companies" />
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Error message={error} />
+      ) : (
+        companyData.map((company: CompanyData) => (
+          <ListItem key={company.companyId} company={company} />
+        ))
+      )}
     </main>
   );
 }

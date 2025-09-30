@@ -1,0 +1,62 @@
+.item {
+    background: var(--backgroundColour);
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 12px 0 12px 0;
+}
+
+.name {
+    color: var(--text);
+    line-height: 100%;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.description {
+    color: var(--primary);
+    width: 182px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 16px;
+    font-size: 13px;
+    letter-spacing: 0;
+    font-style: normal;
+    margin: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: left;
+    height: 41px;
+
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.chevron {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+}

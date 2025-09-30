@@ -1,21 +1,37 @@
+:root {
+  --backgroundColour: #fff;
+  --logoBackground: #ffffff;
+  --text: #010101;
+  --primary: #999999;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColour: #302d2d;
+    --text: #FFFFFF;
+    --primary: #b6b4b4;
+    --logoBackground: #6c6a6a;
+  }
+}
+
+body {
+  background: var(--backgroundColour);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
-  color: #333;
-  background: #f1f1f1;
+  margin: 40px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+
