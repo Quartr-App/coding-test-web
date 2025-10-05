@@ -8,4 +8,7 @@ export default function handler(
   res: NextApiResponse<any>
 ) {
   res.status(200).json(data);
+
+  // ERROR test  
+  //res.status(500).json({ message: "Internal Server Error" });
 }

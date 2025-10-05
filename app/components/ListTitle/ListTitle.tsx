@@ -1,6 +1,5 @@
 import styles from './ListTitle.module.css'
 
-
 type ListTitleProps = {
   listTitle: string;
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
