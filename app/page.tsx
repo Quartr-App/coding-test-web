@@ -28,7 +28,7 @@ export default function Home() {
 
     fetchData();
   }, []);
-console.log({ companies})
+
   return (
     <main className="p-10">
       <h2 className={inter.className}>Quartr</h2>
