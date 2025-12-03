@@ -1,31 +1,24 @@
-"use client";
+import { Inter } from '@next/font/google';
+import { CompanyList } from './components/CompanyList';
+import { CompaniesResponse } from '../types/company';
+const inter = Inter({ subsets: ['latin'] });
 
-import { Inter } from "@next/font/google";
-import { useEffect, useState } from "react";
-const inter = Inter({ subsets: ["latin"] });
+async function getData(): Promise<CompaniesResponse> {
+  const response = await fetch('http://localhost:3000/api/companies');
+  if (!response.ok) {
+    throw new Error('Failed to fetch companies');
+  }
+  return response.json();
+}
 
-export default function Home() {
-  const [stuff1, setStuff1] = useState<any>([]);
-  useEffect(() => {
-    // declare the data fetching function
-    const fetchData = async () => {
-      const data = await fetch("/api/companies");
-      const data2 = await data.json();
-      console.log(data2);
-      setStuff1(data2);
-    };
-
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
-  }, []);
-
+export default async function Home() {
+  const data = await getData();
   return (
     <main>
-      <h2 className={inter.className}>Quartr</h2>
-      <p className={inter.className}>Trending companies</p>
-      <p>{JSON.stringify(stuff1)}</p>
+      <h3 className={`${inter.className} text-gray-500 font-normal`}>
+        Trending companies
+      </h3>
+      <CompanyList companies={data} />
     </main>
   );
 }

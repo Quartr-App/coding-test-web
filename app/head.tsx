@@ -1,7 +1,3 @@
 export default function Head() {
-  return (
-    <>
-      <title>Quartr</title>
-    </>
-  );
+  return <title>Quartr</title>;
 }
