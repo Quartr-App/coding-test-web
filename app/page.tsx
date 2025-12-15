@@ -7,12 +7,12 @@ import "./page.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { companies } = useTrending();
+  const { companies, loading } = useTrending();
 
   return (
     <main className={inter.className}>
       <h2>Trending companies</h2>
-      <TrendingList companies={companies} />
+      <TrendingList companies={companies} showLoading={loading} />
     </main>
   );
 }
