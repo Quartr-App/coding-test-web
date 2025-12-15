@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className={inter.className}>
       <h2>Trending companies</h2>
-      <TrendingList companies={companies} showLoading={loading} />
+      <TrendingList companies={companies || []} showLoading={loading} />
     </main>
   );
 }
