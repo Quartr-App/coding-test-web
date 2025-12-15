@@ -1,4 +1,4 @@
-import { TrendingCompany } from "../../pages/api/companies";
+import { TrendingCompany } from "../../../pages/api/companies";
 import { ListItem } from "./ListItem";
 import { ListItemSkeleton } from "./ListItemSkeleton";
 

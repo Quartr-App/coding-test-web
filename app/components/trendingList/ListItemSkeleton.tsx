@@ -1,4 +1,4 @@
-import { Chevron } from "./Chevron";
+import { Chevron } from "../Chevron";
 import "./ListItemSkeleton.css";
 
 export function ListItemSkeleton() {

@@ -1,5 +1,5 @@
-import type { TrendingCompany } from "../../pages/api/companies";
-import { Chevron } from "./Chevron";
+import type { TrendingCompany } from "../../../pages/api/companies";
+import { Chevron } from "../Chevron";
 import "./ListItem.css";
 
 interface ListItemProps {

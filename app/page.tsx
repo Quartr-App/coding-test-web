@@ -2,7 +2,7 @@
 
 import { Inter } from "@next/font/google";
 import { useTrending } from "./lib/useTrending";
-import { TrendingList } from "./components/TrendingList";
+import { TrendingList } from "./components/trendingList/TrendingList";
 import "./page.css";
 const inter = Inter({ subsets: ["latin"] });
 
