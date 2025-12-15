@@ -1,26 +1,27 @@
+import type { TrendingCompany } from "../../pages/api/companies";
 import { Chevron } from "./Chevron";
 import "./ListItem.css";
 
 interface ListItemProps {
-  title: string;
-  description: string;
-  darkImageUrl: string;
-  lightImageUrl: string;
+  company: TrendingCompany;
 }
 
-export function ListItem({
-  title,
-  description,
-  darkImageUrl,
-  lightImageUrl,
-}: ListItemProps) {
+export function ListItem({ company }: ListItemProps) {
   return (
     <li className="list-item">
-      <img src={darkImageUrl} alt={title} data-theme="dark" />
-      <img src={lightImageUrl} alt={title} data-theme="light" />
+      <img
+        src={company.logoDarkUrl}
+        alt={company.displayName}
+        data-theme="dark"
+      />
+      <img
+        src={company.logoLightUrl}
+        alt={company.displayName}
+        data-theme="light"
+      />
       <div className="info">
-        <p className="title">{title}</p>
-        <p className="description">{description}</p>
+        <p className="title">{company.displayName}</p>
+        <p className="description">{company.description}</p>
       </div>
       <Chevron />
     </li>

@@ -23,13 +23,7 @@ export function TrendingList({ companies, showLoading }: TrendingListProps) {
   return (
     <ul>
       {companies.map((company) => (
-        <ListItem
-          key={company.companyId}
-          title={company.displayName}
-          description={company.description}
-          darkImageUrl={company.logoDarkUrl}
-          lightImageUrl={company.logoLightUrl}
-        />
+        <ListItem key={company.companyId} company={company} />
       ))}
     </ul>
   );

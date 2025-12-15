@@ -19,7 +19,7 @@
   }
 }
 
-.list-item {
+.skeleton-list-item {
   display: flex;
   flex-direction: row;
   height: 64px;

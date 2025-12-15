@@ -3,7 +3,7 @@ import "./ListItemSkeleton.css";
 
 export function ListItemSkeleton() {
   return (
-    <li className="list-item">
+    <li className="skeleton-list-item">
       <div className="skeleton-img">
         <div className="skeleton"></div>
       </div>
