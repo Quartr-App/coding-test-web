@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const data = {
+export const data = {
   data: [
     {
       companyId: 1,
@@ -184,9 +184,27 @@ const data = {
   ],
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<any>
-) {
-  res.status(200).json(data);
+export interface TrendingCompany {
+  companyId: number;
+  companyName: string;
+  companyCountry: string;
+  companyTicker: string;
+  displayName: string;
+  infoUrl: string;
+  liveUrl: string;
+  logoLightUrl: string;
+  logoDarkUrl: string;
+  iconUrl: string | null;
+  description: string;
+  reportingCurrency: string;
+  colorSettings: {
+    brandColor: string;
+  };
+  isins: string[];
+}
+
+export default function GET(req: NextApiRequest, res: NextApiResponse<any>) {
+  const filteredData = data.data.map((x) => ({ ...x, events: undefined }));
+
+  res.status(200).json({ data: filteredData });
 }
