@@ -1,0 +1,11 @@
+main {
+  padding: 24px 86px;
+  h2 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #999999;
+
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+}
