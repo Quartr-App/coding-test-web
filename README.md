@@ -24,11 +24,11 @@ You can find a link to the Figma [here](https://www.figma.com/file/PWNtHgOgjeYYG
 
 You can make any modifications or suggestions for modifications that you see fit. Fork this repository and deliver your results via a pull-request or send us an e-mail. You could also create a gist, for privacy reasons, and send us the link.
 
-During a technical interview, we will discuss this task and have a closer look at the code together with you. You should be able to explain your considerations of the code implementation. 
+During a technical interview, we will discuss this task and have a closer look at the code together with you. You should be able to explain your considerations of the code implementation.
 
 ## Completion time
 
-The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it. But please let us know if there are circumstances delaying your submission of the code. 
+The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it. But please let us know if there are circumstances delaying your submission of the code.
 
 ## What we expect
 
@@ -47,3 +47,18 @@ The time you spend on this test is not limited. The idea is to take your time, r
 Technical constraints
 
 - Use React 17+ and TypeScript
+
+## Feedback
+
+It was quite vague what kind of end result is expected, so I:
+
+- Broke the code down into layers components -> pages -> hooks -> api
+- Added dark mode to not flashbang myself (though some images don't look as good, even when marked for dark bg)
+- I really don't enjoy writing css, but adding additional dependencies doesn't feel right. I'd use tailwind here
+- The backend is too barebones to improve, it's a fixture and a handler. Therefore I broke it down a bit into companies <-> events entities, since we don't use that info in the main component
+
+What I would time if I'd put more time into it:
+
+- Tests, but in real life I probably wouldn't test the endpoints in this scenario. If it's part of the landing - e2e or a snapshot would make sense (depending on how dynamic the data is)
+- Interactivity. Like expanding details with events or description. It's a bit too barebones, but lack of direction kind of made it too vague to argue what the list items are expected to be. Links?
+- Lacking BE, maybe some interactivity forms, if not for data mutation, then for some ephemeral state purely for showcase purposes
