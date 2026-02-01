@@ -1,31 +1,54 @@
 "use client";
-
-import { Inter } from "@next/font/google";
 import { useEffect, useState } from "react";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
+interface Company {
+  companyId: number;
+  companyName: string;
+  displayName: string;
+  description: string;
+  iconUrl: string | null;
+  logoLightUrl: string;
+}
+
 export default function Home() {
-  const [stuff1, setStuff1] = useState<any>([]);
+  const [companies, setCompanies] = useState<Company[]>([]);
+  
   useEffect(() => {
-    // declare the data fetching function
     const fetchData = async () => {
-      const data = await fetch("/api/companies");
-      const data2 = await data.json();
-      console.log(data2);
-      setStuff1(data2);
+      const response = await fetch("/api/companies");
+      const result = await response.json();
+      console.log(result);
+      setCompanies(result.data || []);
     };
 
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
+    fetchData().catch(console.error);
   }, []);
 
   return (
-    <main>
-      <h2 className={inter.className}>Quartr</h2>
-      <p className={inter.className}>Trending companies</p>
-      <p>{JSON.stringify(stuff1)}</p>
+    <main className={`${styles.container} ${inter.className}`}>
+      <h1 className={styles.title}>Trending companies</h1>
+      <div className={styles.companyList}>
+        {companies.map((company) => (
+          <div key={company.companyId} className={styles.companyCard}>
+            <div className={styles.companyInfo}>
+              <img 
+                src={company.iconUrl || company.logoLightUrl} 
+                alt={company.displayName}
+                className={styles.companyLogo}
+              />
+              <div className={styles.companyDetails}>
+                <h2 className={styles.companyName}>{company.displayName}</h2>
+                <p className={styles.companyDescription}>{company.description}</p>
+              </div>
+            </div>
+            <span className={styles.chevron}>›</span>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
