@@ -1,6 +1,6 @@
 # coding-test-web
 
-🎥 **UI Demo:** [Watch the UI walkthrough video](docs/ui-demo.mp4)
+🎥 **UI Demo:** [Watch the UI walkthrough video](docs/ui-demo.MOV)
 
 🗂️ **Database diagram** [Entity Relationship](docs/db-relationship-diagram.png)
 
@@ -197,7 +197,7 @@ docker compose -f server/docker-compose.yml run --rm seed
 ## UI Demo
 
 🎥 **UI walkthrough video:**  
-[UI walkthrough video](docs/ui-demo.mp4)
+[UI walkthrough video](docs/ui-demo.MOV)
 [Entity Relationship](docs/db-relationship-diagram.png)
 
 The video demonstrates:
