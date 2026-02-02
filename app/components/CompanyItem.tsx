@@ -3,16 +3,19 @@ import Link from "next/link";
 import { Company } from "@/server/companies";
 
 export function CompanyItem({
-  company: { companyId, logoDarkUrl, displayName, description },
+  company: { companyId, logoDarkUrl, displayName, description, liveUrl },
 }: {
-  company: Company;
+  company: Pick<
+    Company,
+    "companyId" | "logoDarkUrl" | "displayName" | "description" | "liveUrl"
+  >;
 }) {
   const titleId = `company-${companyId}-title`;
   const descriptionId = `company-${companyId}-description`;
 
   return (
     <Link
-      href="/"
+      href={liveUrl}
       aria-labelledby={titleId}
       aria-describedby={descriptionId}
       className="flex flex-col border-b pb-6 border-b-gray-200 sm:flex-row text-center sm:text-left sm:items-center"
