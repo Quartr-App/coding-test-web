@@ -1,0 +1,44 @@
+.body {
+  max-height: 65vh;
+  overflow: auto;
+}
+
+.label {
+  width: 100%;
+}
+
+.eventTitle {
+  font-size: 14px;
+}
+
+.eventMeta {
+  font-size: 12px;
+}
+
+.content {
+  padding-top: 12px;
+}
+
+.pagination {
+  margin-top: 16px;
+}
+
+/* Collapse list styling */
+.collapse:global(.ant-collapse) {
+  background: transparent;
+}
+
+.collapse:global(.ant-collapse) > :global(.ant-collapse-item) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.collapse:global(.ant-collapse) > :global(.ant-collapse-item) > :global(.ant-collapse-header) {
+  padding: 16px 0;
+}
+
+.collapse:global(.ant-collapse)
+  > :global(.ant-collapse-item)
+  > :global(.ant-collapse-content)
+  > :global(.ant-collapse-content-box) {
+  padding: 0 0 16px;
+}

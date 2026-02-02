@@ -1,0 +1,27 @@
+{
+  "name": "nextjs-13",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.1.0",
+    "@next/font": "13.0.7",
+    "@tanstack/react-query": "^5.90.20",
+    "@types/node": "18.11.17",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "antd": "^6.2.2",
+    "axios": "^1.13.4",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.0.7",
+    "next": "13.0.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.4"
+  }
+}

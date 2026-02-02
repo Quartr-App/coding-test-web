@@ -1,49 +1,208 @@
-## Installation
+# coding-test-web
 
-This project is based on NextJS 13, and requires node 16.13.0 or higher.
+🎥 **UI Demo:** [Watch the UI walkthrough video](docs/ui-demo.mp4)
 
-**Installation**
+🗂️ **Database diagram** [Entity Relationship](docs/db-relationship-diagram.png)
 
+A full-stack coding test application built as a monorepo.
+
+## Architecture Overview
+
+- **Client:** Next.js 13 (App Router), Ant Design, React Query
+- **Server:** NestJS, TypeORM
+- **Database:** Postgres 16 (Docker)
+- **API Versioning:** Automatically derived from the server’s major version
+- **Dev Setup:** Docker Compose (API + DB + seed) + Next.js dev server
+
+## Repository Structure
+
+```txt
+├── client/   # Next.js 13 UI
+└── server/   # NestJS API + Postgres (Docker Compose)
 ```
+
+## Quick Start (Recommended)
+
+cd first into each `client/` and `server/` to run the command for dependencies installation:
+
+```zsh
 npm install
 ```
 
-**Running the application**
+From the repo root you can concurrently run `client/` and `server/` locally and connect to your docker with the commands below in one terminal:
 
-```
+```zsh
+npm install
 npm run dev
 ```
 
-## Your assignment
+Then open:
 
-We are going to display a list of trending companies on our start page, your assigment is to create a list of companies that we can display on our start page. The design is not complete, but should give you a good idea on what direction to take. The code provided is functional, but it’s difficult to read and understand. It needs significant refactoring to improve its structure and maintainability.
+- **UI:** http://localhost:3000
+- **API:** http://localhost:8780/api/v1
+- **Swagger:** http://localhost:8780/api/v1/docs
 
-You can find a link to the Figma [here](https://www.figma.com/file/PWNtHgOgjeYYGmQIYpLkm4/Quartr?node-id=0%3A1&t=49UGjItn5gFyMAku-0).
+Stop everything:
 
-## Instructions
+```zsh
+npm run stop
+```
 
-You can make any modifications or suggestions for modifications that you see fit. Fork this repository and deliver your results via a pull-request or send us an e-mail. You could also create a gist, for privacy reasons, and send us the link.
+## Prerequisites
 
-During a technical interview, we will discuss this task and have a closer look at the code together with you. You should be able to explain your considerations of the code implementation. 
+Make sure you have:
 
-## Completion time
+- Node.js (server Docker image uses Node 24)
+- Docker
 
-The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it. But please let us know if there are circumstances delaying your submission of the code. 
+## How It Works
 
-## What we expect
+Running `npm run dev` from the repo root starts both sides of the app:
 
-- A clean and well-structured readable code, where it is easy to understand what is going on
-- Organizing the code in a way where every function or component is responsible for only one thing
-- Usage of Typescript, and good practices using interfaces where needed
+### Server (Docker Compose)
 
-## Appreciated with the implementation
+- `db`: Postgres 16 (localhost:5432)
+- `api`: NestJS API (localhost:8780)
+- `seed`: one-shot container that seeds companies + events
 
-⚠️ Those are not required, but can give you some advice how to make your task look even better.
+### Client
 
-- Unit and functional tests: a 100% coverage is not necessary, just make them pertinent
-- Good accessibility practices
-- Usage of the state co-location pattern
+- Next.js dev server (localhost:3000)
 
-Technical constraints
+You can also run them independently:
 
-- Use React 17+ and TypeScript
+```zsh
+npm run dev:server # server only (Docker)
+npm run dev:client # client only (Next.js)
+```
+
+## API Versioning (Important)
+
+The API base path is computed dynamically from the major version in `server/package.json`.
+
+Examples:
+
+- `1.0.1` → `/api/v1`
+- `2.x.x` → `/api/v2`
+
+This logic lives in:
+
+- `server/src/main.ts`
+
+⚠️ If the server major version changes, all API routes automatically move to the new versioned prefix.
+
+## API Cheat Sheet
+
+**Base path (current):**
+
+- http://localhost:8780/api/v1
+
+### Endpoints
+
+#### `GET /api/v1`
+
+Health check
+
+#### `GET /api/v1/companies`
+
+Returns companies with related events.
+
+**Query Parameters**
+
+| Param          | Type   | Notes                          |
+|---------------|--------|--------------------------------|
+| country       | string | `ALL` / `all` disables filtering |
+| page          | number | min 1                          |
+| limit         | number | min 1, max 100                 |
+| companyId     | number | min 1                          |
+| companyTicker | string | exact match                    |
+
+Example:
+
+```zsh
+curl "http://localhost:8780/api/v1/companies?country=NO&page=1&limit=5"
+```
+
+## Client Notes
+
+The home page renders the **Trending Companies** feature:
+
+- Company list
+- Pagination
+- Country filter
+- Company detail view with events
+
+Data fetching uses Axios + React Query.
+
+Hooks live in:
+
+- `client/app/features/trending-companies/hooks/index.ts`
+
+## Known Limitation (Intentional)
+
+The API URL is currently hard-coded in the client:
+
+- http://localhost:8780/api/v1/companies
+
+This is intentional for simplicity in the coding test. In a production setup, this would be environment-driven (e.g. `NEXT_PUBLIC_API_BASE_URL`).
+
+## Server Notes
+
+### Running the API Without Docker
+
+Nest loads environment variables from `server/.env`.
+
+```zsh
+cd server
+cp .env.sample .env
+npm install
+npm run seed
+npm run start:dev
+```
+
+For Docker-based commands, refer to:
+
+- `server/Makefile`
+- `server/README.md`
+
+## Common Commands
+
+From the repo root:
+
+```zsh
+npm run dev        # API (Docker) + Client (Next.js)
+npm run dev:server # API only
+npm run dev:client # Client only (Next.js)
+npm run stop       # Docker Compose down
+```
+
+From `client/`:
+
+```zsh
+npm run dev
+npm run build
+npm run lint
+```
+
+## Troubleshooting
+
+- **404s from the API?** Confirm the prefix matches the server major version (`/api/v1`).
+- **UI network errors?** Make sure the API is running at http://localhost:8780.
+- **No data showing up?** Re-run the seed job:
+
+```zsh
+docker compose -f server/docker-compose.yml run --rm seed
+```
+
+## UI Demo
+
+🎥 **UI walkthrough video:**  
+[UI walkthrough video](docs/ui-demo.mp4)
+[Entity Relationship](docs/db-relationship-diagram.png)
+
+The video demonstrates:
+
+- Trending companies list
+- Pagination
+- Country filtering
+- Company detail view with events

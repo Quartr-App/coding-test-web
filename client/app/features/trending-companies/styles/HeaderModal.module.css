@@ -1,0 +1,20 @@
+.root {
+  --brand-color: rgba(0, 0, 0, 0.12);
+}
+
+.brandBar {
+  height: 4px;
+  border-radius: 8px;
+  background: var(--brand-color);
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeBtn {
+  color: rgba(0, 0, 0, 0.55);
+}

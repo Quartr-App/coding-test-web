@@ -1,0 +1,1 @@
+export { TrendingCompanies } from "./TrendingCompanies";

@@ -1,0 +1,90 @@
+.root {
+  width: 100%;
+}
+
+.previewBtn {
+  height: auto;
+  text-align: left;
+}
+
+.previewDefault {
+  padding: 10px 12px;
+}
+
+.previewCompact {
+  padding: 8px 10px;
+}
+
+.previewInner {
+  width: 100%;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 0 0 auto;
+}
+
+.thumbnailDefault {
+  width: 92px;
+  height: 64px;
+}
+
+.thumbnailCompact {
+  width: 72px;
+  height: 48px;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.previewText {
+  min-width: 0;
+}
+
+.previewTitleCompact {
+  font-size: 13px;
+}
+
+.previewLabelDefault {
+  font-size: 12px;
+}
+
+.previewLabelCompact {
+  font-size: 11px;
+}
+
+.actions {
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  height: 24px;
+  padding-inline: 10px;
+  border-radius: 999px;
+  font-weight: 300;
+}
+
+/* Accent outline coloring + hover fill */
+.outlineAccent:global(.ant-btn) {
+  border-color: var(--accent, rgba(0, 0, 0, 0.25));
+  color: var(--accent, rgba(0, 0, 0, 0.88));
+}
+
+.outlineAccent:global(.ant-btn):hover,
+.outlineAccent:global(.ant-btn):focus-visible {
+  background: rgba(0, 0, 0, 0.04) !important;
+  background: color-mix(in srgb, var(--accent) 12%, transparent) !important;
+  border-color: var(--accent, rgba(0, 0, 0, 0.25)) !important;
+}
+
+.outlineAccent:global(.ant-btn):active {
+  background: rgba(0, 0, 0, 0.06) !important;
+  background: color-mix(in srgb, var(--accent) 20%, transparent) !important;
+}

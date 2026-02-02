@@ -1,0 +1,161 @@
+/* ===== Page surface ===== */
+.surface {
+  width: 100%;
+  max-width: none; /* let it be page-wide */
+  min-height: 100vh;
+  margin: 0;
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.countrySelect {
+  width: 112px;
+  font-size: 12px;
+}
+
+.countryDropdown :global(.ant-select-item) {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.countryDropdown :global(.ant-select-item-group) {
+  font-size: 12px;
+}
+
+
+/* ===== Loading / error row ===== */
+.stateRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Company list ===== */
+.list {
+  margin-top: 8px;
+}
+
+/* Clickable row */
+.row {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.row:focus-visible {
+  outline: 2px solid #1677ff;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Row content */
+.rowContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.logoBox {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+}
+
+.logo {
+  object-fit: contain;
+  transform: scale(1.05);
+}
+
+
+/* Text stack */
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.textStack {
+  flex: 1;
+  min-width: 0;
+
+  /* This is the key: give the text column a predictable measure */
+  max-width: 400px; /* tune this */
+}
+
+.desc {
+  display: block;
+  min-width: 0;
+
+  font-size: 11px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.45);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: none;
+}
+
+/* Chevron */
+.chevron {
+  margin-left: auto;
+  width: 16px;
+  text-align: right;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,68 @@
+.titleRow {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.viewer {
+  height: 70vh;
+  overflow: auto;
+}
+
+.scaler {
+  transform-origin: top left;
+}
+
+.frame {
+  width: 100%;
+  height: 70vh;
+  border: 0;
+  background: #fff;
+}
+
+.scale075 {
+  width: 133.333333%;
+  height: 133.333333%;
+  transform: scale(0.75);
+}
+
+.scale100 {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+}
+
+.scale125 {
+  width: 80%;
+  height: 80%;
+  transform: scale(1.25);
+}
+
+.scale150 {
+  width: 66.666667%;
+  height: 66.666667%;
+  transform: scale(1.5);
+}
+
+.scale175 {
+  width: 57.142857%;
+  height: 57.142857%;
+  transform: scale(1.75);
+}
+
+.scale200 {
+  width: 50%;
+  height: 50%;
+  transform: scale(2);
+}
+
+.scale225 {
+  width: 44.444444%;
+  height: 44.444444%;
+  transform: scale(2.25);
+}
+
+.scale250 {
+  width: 40%;
+  height: 40%;
+  transform: scale(2.5);
+}

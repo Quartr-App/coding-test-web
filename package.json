@@ -1,23 +1,13 @@
 {
-  "name": "nextjs-13",
-  "version": "0.1.0",
+  "name": "coding-test-web",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "docker compose -f server/docker-compose.yml up --build",
+    "dev": "concurrently -k -n server,client \"npm run dev:server\" \"npm run dev:client\"",
+    "stop": "docker compose -f server/docker-compose.yml down"
   },
-  "dependencies": {
-    "@next/font": "13.0.7",
-    "@types/node": "18.11.17",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.9",
-    "eslint": "8.30.0",
-    "eslint-config-next": "13.0.7",
-    "next": "13.0.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+  "devDependencies": {
+    "concurrently": "^9.2.0"
   }
 }

@@ -1,0 +1,829 @@
+.page {
+	padding: 24px;
+}
+
+.card {
+	--row-pad-x: 60px;
+	--row-pad-y: 14px;
+	--row-gap: 12px;
+	--logo-size: 40px;
+	--chevron-size: 20px;
+
+	max-width: 720px;
+	background: #fff;
+	border-radius: 14px;
+	overflow: visible;
+	margin: 0 auto;
+}
+
+	.popoverModal {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: min(560px, calc(100vw - 40px));
+		max-height: calc(100vh - 80px);
+		overflow: auto;
+		background: #fff;
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		border-radius: 14px;
+		padding: 14px 16px;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+		z-index: 120;
+	}
+
+.popoverModal::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 4px;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	background: var(--brand, rgba(0, 0, 0, 0.12));
+}
+
+.sectionLabel {
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.55);
+	padding: 18px 0 8px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 0 var(--row-pad-x);
+}
+
+
+.countryPicker {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding-top: 18px;
+}
+
+.countryPickerLabel {
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.45);
+}
+
+.countrySelect {
+	appearance: none;
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 10px;
+	padding: 8px 12px;
+	font-size: 13px;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.75);
+	cursor: pointer;
+}
+
+.countrySelect:hover {
+	border-color: rgba(0, 0, 0, 0.22);
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.countrySelect:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.muted {
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.55);
+	padding: 0 var(--row-pad-x) 18px;
+}
+
+.companyList {
+	list-style: none;
+}
+
+.companyRow {
+	position: relative;
+}
+
+.companyRowOpen {
+	position: relative;
+	z-index: 101;
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.22);
+	backdrop-filter: blur(1px);
+	z-index: 100;
+	appearance: none;
+	border: 0;
+	padding: 0;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+.companyRow::before {
+	content: "";
+	position: absolute;
+	left: var(--row-pad-x);
+	right: var(--row-pad-x);
+	top: 0;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.06);
+}
+
+.companyRow:first-child::before {
+	content: none;
+}
+
+.companyRow:last-child::after {
+	content: "";
+	position: absolute;
+	left: var(--row-pad-x);
+	right: var(--row-pad-x);
+	bottom: 0;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.06);
+}
+
+.companyRowButton {
+	display: flex;
+	align-items: center;
+	gap: var(--row-gap);
+	padding: var(--row-pad-y) var(--row-pad-x);
+	appearance: none;
+	background: transparent;
+	border: 0;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+}
+
+.companyRowButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: -2px;
+}
+
+.companyLogo {
+	width: var(--logo-size);
+	height: var(--logo-size);
+	border-radius: 10px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.06);
+	flex: 0 0 auto;
+}
+
+.companyLogo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.companyLogoFallback {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.companyText {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1 1 auto;
+}
+
+.companyName {
+	font-size: 15px;
+	font-weight: 600;
+	color: #111;
+}
+
+.companyDescription {
+	font-size: 13px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.55);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+.popoverHeaderRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.popoverClose {
+	appearance: none;
+	background: transparent;
+	border: 0;
+	color: rgba(0, 0, 0, 0.55);
+	font-size: 14px;
+	line-height: 1;
+	padding: 6px;
+	cursor: pointer;
+}
+
+.popoverClose:hover {
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.popoverClose:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.popoverTitle {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--brandText, #111);
+	background: var(--brand, rgba(0, 0, 0, 0.06));
+	border-radius: 10px;
+	padding: 6px 10px;
+}
+
+.popoverMeta {
+	margin-top: 4px;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.55);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.popoverDot {
+	padding: 0 6px;
+}
+
+.popoverSection {
+	margin-top: 10px;
+}
+
+.popoverSectionHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-bottom: 10px;
+}
+
+.popoverSectionTitle {
+	font-size: 12px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.65);
+	margin-bottom: 0;
+}
+
+.viewAllEventsButton {
+	appearance: none;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.7);
+	text-decoration: underline;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.viewAllEventsButton:hover {
+	color: rgba(0, 0, 0, 0.9);
+}
+
+.viewAllEventsButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+	border-radius: 6px;
+}
+
+.eventsOverlay {
+	position: fixed;
+	inset: 0;
+	z-index: 160;
+}
+
+.eventsBackdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.28);
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.eventsModal {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: min(860px, calc(100vw - 40px));
+	max-height: calc(100vh - 40px);
+	background: #fff;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	z-index: 161;
+}
+
+.eventsHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 14px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.eventsTitle {
+	font-size: 13px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.8);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.eventsClose {
+	appearance: none;
+	background: rgba(0, 0, 0, 0.06);
+	border: 0;
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.eventsClose:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.eventsBody {
+	max-height: calc(100vh - 110px);
+	overflow: auto;
+	padding: 12px 14px;
+	background: rgba(0, 0, 0, 0.01);
+}
+
+.eventsList {
+	list-style: none;
+}
+
+.eventsRow {
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 12px;
+	padding: 12px;
+	margin-bottom: 10px;
+}
+
+.eventsRowTop {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.eventsRowTitle {
+	font-size: 13px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.eventsRowMeta {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.5);
+	white-space: nowrap;
+}
+
+.eventsRowDot {
+	padding: 0 6px;
+}
+
+.eventsRowActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 10px;
+}
+
+.eventsDocs {
+	margin-top: 10px;
+}
+
+.eventsPagination {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 14px;
+}
+
+.eventsPageLabel {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.55);
+}
+
+.eventsPageButton {
+	appearance: none;
+	background: rgba(0, 0, 0, 0.04);
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
+	padding: 8px 12px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.eventsPageButton:disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+.eventsPageButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.docsRow {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.docsActionsCol {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	flex: 1 1 180px;
+	min-width: 180px;
+}
+
+.pdfThumbButton {
+	position: relative;
+	width: min(240px, 100%);
+	height: 140px;
+	appearance: none;
+	background: #fff;
+	color: #111;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	padding: 0;
+	overflow: hidden;
+	cursor: pointer;
+	margin: 0;
+	flex: 0 0 auto;
+}
+
+.pdfThumbButton:hover {
+	border-color: rgba(0, 0, 0, 0.16);
+	background: rgba(0, 0, 0, 0.03);
+}
+
+.pdfThumbButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.pdfThumb {
+	position: absolute;
+	inset: 0;
+}
+
+.pdfThumbFrame {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1000px;
+	height: 1400px;
+	transform: scale(0.16);
+	transform-origin: top left;
+	border: 0;
+	pointer-events: none;
+	background: #fff;
+}
+
+.pdfThumbCta {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-size: 12px;
+	line-height: 1;
+	padding: 8px 10px;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.55);
+	color: #fff;
+}
+
+.popoverEventList {
+	list-style: none;
+}
+
+.popoverEventRow {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	column-gap: 10px;
+	row-gap: 6px;
+	padding: 6px 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.popoverEventRow:first-child {
+	border-top: 0;
+	padding-top: 0;
+}
+
+.popoverEventName {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.72);
+	min-width: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.popoverEventDate {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.45);
+}
+
+.popoverLinks {
+	grid-column: 1 / -1;
+	display: flex;
+	gap: 12px;
+	font-size: 12px;
+}
+
+.popoverLinks a,
+.popoverFooter a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.popoverLinks a:hover,
+.popoverFooter a:hover {
+	text-decoration: underline;
+}
+
+.popoverFooter {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid rgba(0, 0, 0, 0.06);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 12px;
+}
+
+.popoverFooterLink {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.popoverFooterLink:hover {
+	color: rgba(69, 140, 198, 0.9);
+	text-decoration: underline;
+}
+
+.popoverFooterLink:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+	border-radius: 6px;
+}
+
+.popoverFooterSep {
+	color: rgba(0, 0, 0, 0.35);
+}
+
+.popoverActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.popoverActionButton {
+	appearance: none;
+	background: var(--brand, rgba(0, 0, 0, 0.06));
+	color: var(--brandText, #111);
+	border: 0;
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.popoverActionButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.popoverActionLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 11px;
+	color: rgba(0, 0, 0, 0.9);
+	text-decoration: none;
+	padding: 6px 8px;
+	border-radius: 9px;
+	background: #fff;
+	border: 1px solid var(--brand, rgba(0, 0, 0, 0.18));
+}
+
+.popoverActionLink:hover {
+	color: rgba(0, 0, 0, 0.95);
+	background: #fff;
+	border-color: var(--brand, rgba(0, 0, 0, 0.28));
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 0 0 2px var(--brand, rgba(0, 0, 0, 0.18));
+}
+
+.popoverActionLink:focus-visible {
+	outline: 2px solid var(--brand, rgba(0, 0, 0, 0.35));
+	outline-offset: 2px;
+	border-radius: 10px;
+}
+
+.docOverlay {
+	position: fixed;
+	inset: 0;
+	z-index: 200;
+}
+
+.docBackdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.28);
+	z-index: 200;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.docModal {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: min(960px, calc(100vw - 40px));
+	height: min(720px, calc(100vh - 40px));
+	background: #fff;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+	z-index: 201;
+}
+
+.docHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 12px 14px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.docTitle {
+	font-size: 13px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.8);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 40ch;
+}
+
+.docControls {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.docControlButton {
+	appearance: none;
+	background: #e6e6e6;
+	color: #111;
+	border: 0;
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.docControlButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.docZoomLabel {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.6);
+	min-width: 4ch;
+	text-align: right;
+}
+
+.docOpenLink {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.9);
+	text-decoration: none;
+	padding: 8px 10px;
+	border-radius: 10px;
+}
+
+.docOpenLink:hover {
+	color: rgba(0, 0, 0, 0.95);
+	text-decoration: underline;
+}
+
+.docCloseButton {
+	appearance: none;
+	background: rgba(0, 0, 0, 0.08);
+	border: 0;
+	border-radius: 10px;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.docCloseButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.docBody {
+	height: calc(100% - 49px);
+	background: #fff;
+	overflow: auto;
+}
+
+.docFrameWrap {
+	width: calc(100% / var(--doc-zoom, 1));
+	height: calc(100% / var(--doc-zoom, 1));
+	transform-origin: top left;
+}
+
+.docFrame {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: #fff;
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 22px;
+	padding: 18px var(--row-pad-x) 22px;
+}
+
+.paginationLabel {
+	font-size: 13px;
+	color: rgba(0, 0, 0, 0.55);
+}
+
+.paginationButton {
+	appearance: none;
+	background: #f2f2f2;
+	border: 1px solid #d0d0d0;
+	border-radius: 10px;
+	padding: 8px 12px;
+	font-size: 13px;
+	color: #111;
+	cursor: pointer;
+}
+
+.paginationButton:disabled {
+	background: #f6f6f6;
+	border-color: #e2e2e2;
+	color: rgba(0, 0, 0, 0.55);
+	cursor: default;
+}
+
+.paginationButton:focus-visible {
+	outline: 2px solid rgba(0, 0, 0, 0.35);
+	outline-offset: 2px;
+}
+
+.companyChevron {
+	color: rgba(0, 0, 0, 0.35);
+	flex: 0 0 auto;
+}

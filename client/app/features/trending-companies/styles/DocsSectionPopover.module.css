@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.viewAllBtn {
+  padding-inline: 0 !important;
+}

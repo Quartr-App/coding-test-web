@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: quartr-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: quartr
+    ports:
+      - "5432:5432"
+    volumes:
+      - quartr_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d quartr"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: quartr-api
+    environment:
+      APP_ENV: development
+      PORT: 8780
+      DATABASE_CREDENTIALS: '{"username":"postgres","password":"postgres","database":"quartr","host":"db","port":5432}'
+    ports:
+      - "8780:8780"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+    container_name: quartr-seed
+    environment:
+      APP_ENV: development
+      DATABASE_CREDENTIALS: '{"username":"postgres","password":"postgres","database":"quartr","host":"db","port":5432}'
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["node", "dist/src/database/seed/index.js"]
+    restart: "no"
+
+volumes:
+  quartr_pgdata:
