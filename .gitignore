@@ -1,1 +1,15 @@
 /node_modules
+
+# OS
+.DS_Store
+
+# Next.js
+.next
+client/.next
+
+# Logs
+*.log
+
+# Demo videos (GitHub push limit)
+docs/*.MOV
+docs/*.mov
