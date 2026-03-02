@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
+  images: {
+    remotePatterns: [new URL("https://files.quartr.com/**")],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
