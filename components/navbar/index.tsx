@@ -16,7 +16,7 @@ const NavbarStateContext = createNavbarStateContext();
 function useNavbarStateContext() {
   const ctx = useContext(NavbarStateContext);
   if (!ctx) {
-    throw new Error("Navbar.* components must be inside <Navbar>");
+    throw new Error("Navbar* components must be inside <Navbar>");
   }
   return ctx;
 }
@@ -47,7 +47,7 @@ export function NavbarItem({ className, children, ...props }: NavbarItemProps) {
   const current = props.href === currentPathname;
   const classes = cn(
     // Base
-    "relative flex min-w-0 items-center gap-3 rounded-lg p-2 text-start text-base/6 font-medium text-zinc-950 sm:text-sm/5",
+    "relative flex min-inline-0 items-center gap-3 rounded-lg p-2 text-start text-base/6 font-medium text-zinc-950 sm:text-sm/5",
     // Leading icon/icon-only
     "*:data-[slot=icon]:size-6 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:fill-zinc-500 sm:*:data-[slot=icon]:size-5",
     // Trailing icon (down chevron or similar)
@@ -69,7 +69,7 @@ export function NavbarItem({ className, children, ...props }: NavbarItemProps) {
         />
       )}
       {typeof props.href === "string" ? (
-        <Link {...getNavbarItemProps(props)}>
+        <Link className={classes} {...getNavbarItemProps(props)}>
           <TouchTarget>{children}</TouchTarget>
         </Link>
       ) : (
@@ -91,7 +91,7 @@ export function NavbarSection({ className, ...props }: ComponentPropsWithoutRef<
 
   return (
     <LayoutGroup id={id}>
-      <div {...props} className={cn("flex items-center gap-3", className)} />
+      <div className={cn("flex items-center gap-3", className)} {...props} />
     </LayoutGroup>
   );
 }

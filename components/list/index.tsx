@@ -14,7 +14,7 @@ const ListStateContext = createListStateContext();
 function useListStateContext() {
   const ctx = useContext(ListStateContext);
   if (!ctx) {
-    throw new Error("List.* components must be inside <List>");
+    throw new Error("List* components must be inside <List>");
   }
   return ctx;
 }
@@ -90,7 +90,7 @@ export function ListItemTitle({ children, className, ...props }: TextProps) {
 
 export function ListItemDetails({ children, className, ...props }: TextProps) {
   return (
-    <Text className={cn("text-sm leading-none sm:leading-none", className)} {...props}>
+    <Text className={cn("text-sm", className)} {...props}>
       {children}
     </Text>
   );
