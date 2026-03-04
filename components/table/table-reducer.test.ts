@@ -4,7 +4,7 @@ import { tableReducer } from "./table-reducer";
 describe("tableReducer", () => {
   it("SET_ITEMS replaces items in state", () => {
     const state = { items: [1, 2] };
-    const next = tableReducer(state, { type: "SET_ITEMS", items: [3, 4] });
+    const next = tableReducer(state, { items: [3, 4], type: "SET_ITEMS" });
     expect(next.items).toEqual([3, 4]);
   });
 
