@@ -1,26 +1,35 @@
 {
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@tanstack/react-query": "^5.90.21",
+    "@heroicons/react": "2.2.0",
+    "@tanstack/react-query": "5.90.21",
     "@types/node": "22.10.2",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "country-flag-icons": "^1.6.15",
-    "motion": "^12.34.3",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "country-flag-icons": "1.6.15",
+    "motion": "12.34.3",
     "next": "16.1.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "tailwind-merge": "^3.5.0",
+    "tailwind-merge": "3.5.0",
     "typescript": "5.9.3",
-    "zod": "^4.3.6"
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
-    "@tailwindcss/postcss": "^4.2.1",
-    "@tanstack/react-query-devtools": "^5.91.3",
-    "tailwindcss": "^4.2.1"
+    "@tailwindcss/postcss": "4.2.1",
+    "@tanstack/react-query-devtools": "5.91.3",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@vitejs/plugin-react": "5.1.4",
+    "@vitest/coverage-v8": "^4.0.18",
+    "jsdom": "28.1.0",
+    "tailwindcss": "4.2.1",
+    "vite-tsconfig-paths": "6.1.1",
+    "vitest": "4.0.18"
   },
   "name": "quartr-test",
   "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
@@ -29,7 +38,9 @@
     "build": "next build",
     "check": "biome check --write",
     "dev": "next dev",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "version": "0.1.0"
 }
