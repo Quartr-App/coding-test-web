@@ -1,6 +1,6 @@
 export type ListState<T> = {
   items: T[];
-}
+};
 
 type SetItemsAction<T> = {
   type: "SET_ITEMS";

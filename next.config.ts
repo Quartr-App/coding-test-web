@@ -1,8 +1,7 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from "next";
 
 import { validateEnv } from "./website/utils/env";
 
-// Validate env variables before anything
 validateEnv();
 
 const nextConfig: NextConfig = {
