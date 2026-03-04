@@ -17,11 +17,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="relative isolate flex min-block-svh w-full flex-col bg-white lg:bg-zinc-100">
         <ReactQueryProvider>
           <header className="flex items-center px-4">
-            <div className="py-2.5 lg:hidden">
-              {/* <NavbarItem aria-label="Open navigation" onClick={() => setShowSidebar(true)}>
-              <OpenMenuIcon />
-            </NavbarItem> */}
-            </div>
             <div className="min-inline-0 flex-1">
               <Navbar items={[]} label="Main">
                 <Link href="/">
