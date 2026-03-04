@@ -29,7 +29,7 @@ export function CountryFlag({ width = 16, countryCode, size = "3x2", className }
   }, [width, size]);
 
   if (!hasFlag(countryCode)) {
-    return undefined;
+    return null;
   }
 
   return (
