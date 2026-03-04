@@ -1,3 +1,4 @@
+import { cva, type VariantProps } from "class-variance-authority";
 import { type ComponentPropsWithoutRef, createContext, useContext, useRef } from "react";
 import { Link } from "@/components/link";
 import { cn } from "@/website/styles/cn";
@@ -167,8 +168,29 @@ export function TableCell({ className, children, ...props }: ComponentPropsWitho
   );
 }
 
+const tableCaptionVariants = cva([], {
+  defaultVariants: { position: "bottom" },
+  variants: {
+    position: {
+      bottom: "caption-bottom",
+      top: "caption-top",
+    },
+  },
+});
+
+type TableCaptionProps = VariantProps<typeof tableCaptionVariants> & ComponentPropsWithoutRef<"caption">;
+
+export function TableCaption({ className, children, position = "bottom", ...props }: TableCaptionProps) {
+  return (
+    <caption className={cn(tableCaptionVariants({ position }), className)} {...props}>
+      {children}
+    </caption>
+  );
+}
+
 Table.Head = TableHead;
 Table.Body = TableBody;
 Table.Row = TableRow;
 Table.Header = TableHeader;
 Table.Cell = TableCell;
+Table.Caption = TableCaption;
