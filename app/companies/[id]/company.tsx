@@ -2,7 +2,9 @@
 
 import { ArrowTopRightOnSquareIcon, ChevronLeftIcon, PlayCircleIcon } from "@heroicons/react/16/solid";
 import { notFound, useParams } from "next/navigation";
+import { Badge } from "@/components/badge";
 import { Button } from "@/components/button";
+import { IsomorphicDate } from "@/components/date";
 import { Divider } from "@/components/divider";
 import { CountryFlag } from "@/components/flag";
 import { Heading, Subheading } from "@/components/heading";
@@ -10,6 +12,7 @@ import { Image } from "@/components/image";
 import { Link } from "@/components/link";
 import { Table } from "@/components/table";
 import { Strong, Text, TextLink } from "@/components/text";
+import { getContrastColor } from "@/website/utils/get-contrast-color";
 import { getImageSize } from "@/website/utils/get-image-size";
 import { useCompany } from "./use-company";
 
@@ -43,9 +46,14 @@ export function Company() {
               <span aria-hidden="true">·</span>
               <CountryFlag countryCode={company.companyCountry} />
             </div>
-            <Text className="text-sm/6 text-zinc-500">
-              {company.companyTicker}'s financial information is in <Strong>{company.reportingCurrency}</Strong>
-            </Text>
+            <Badge
+              className={`${getContrastColor(company.colorSettings.brandColor)} border`}
+              style={{
+                backgroundColor: company.colorSettings.brandColor,
+              }}
+            >
+              {company.companyTicker}
+            </Badge>
           </div>
         </div>
         <div className="flex gap-4">
@@ -61,6 +69,9 @@ export function Company() {
       <Text>{company.description}</Text>
       <Subheading className="mbs-12">Recent events</Subheading>
       <Table className="mt-4 [--gutter:--spacing(6)] lg:[--gutter:--spacing(10)]" items={company.events}>
+        <Table.Caption position="top">
+          Financial reporting is in <Strong>{company.reportingCurrency}</Strong>
+        </Table.Caption>
         <Table.Head>
           <Table.Row>
             <Table.Header>Title</Table.Header>
@@ -76,7 +87,9 @@ export function Company() {
             ({ eventId, eventDate, eventTitle, fiscalPeriod, fiscalYear, pdfUrl, reportUrl, audioUrl }) => (
               <Table.Row key={eventId} title={`Event #${eventTitle}`}>
                 <Table.Cell>{eventTitle}</Table.Cell>
-                <Table.Cell className="text-zinc-500">{new Date(eventDate).toLocaleDateString()}</Table.Cell>
+                <Table.Cell className="text-zinc-500">
+                  <IsomorphicDate date={eventDate} />
+                </Table.Cell>
                 <Table.Cell>
                   {fiscalPeriod} {fiscalYear}
                 </Table.Cell>
