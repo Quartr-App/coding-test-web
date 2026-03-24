@@ -1,7 +1,12 @@
 export default function Head() {
   return (
     <>
-      <title>Quartr</title>
+      <title key="title">Quartr</title>
+      <meta
+        name="description"
+        content="Explore trending companies on Quartr."
+        key="description"
+      />
     </>
   );
 }

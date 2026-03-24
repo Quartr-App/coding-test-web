@@ -1,84 +1,109 @@
-# Before you begin
+# Quartr coding test
 
-Before you start, we want to clarify expectations to ensure this assignment is a valuable use of your time and ours.
+## Overview
 
-There is no time constraint on this task. We’re not evaluating how quickly you can produce something - we’re evaluating how you think and how you build.
+This submission focuses on building a clean, maintainable implementation for the trending companies start page while keeping the solution intentionally small.
 
-The assignment itself is intentionally simple and narrowly scoped. However, we expect your solution to reflect a production-ready mindset.
+The original setup included an API route returning hardcoded data and a page-level async flow built on top of it. Since the provided company data is static and local to the repo, I chose to simplify the page implementation and focus on structure, semantics, accessibility, and maintainability rather than preserving unnecessary async complexity.
 
-When reviewing your submission, we will focus on:
+---
 
-* Clear structure and sound architecture
-* Thoughtful abstractions
-* Good naming, readability, and maintainability
-* Handling of edge cases
-* Sensible trade-offs and reasoning
-* Code quality that would scale in a larger application
+## What I changed
 
-We’re less interested in “just making it work” and more interested in understanding how you approach building something clean, extensible, and robust. The devil is in the details and that is very important to us.
+- Refactored the page into smaller, clearer pieces
+- Kept reusable UI components generic
+- Added a small transformation layer between raw source data and UI components
+- Improved semantic HTML structure
+- Added focused tests around the most important behavior
+- Kept the implementation intentionally small and avoided unnecessary abstractions
 
-If anything in the brief is unclear, please don’t hesitate to ask clarifying questions, we’re happy to provide additional context. We will not give out details on how you should implement this.
+---
 
-## A note about the current codebase
+## Structure
 
-This project is intentionally provided in an outdated and suboptimal state by default.
-
-Parts of the structure, patterns, and implementation choices may feel old, inconsistent, or poorly organized. This is deliberate. The goal is not only to implement the required feature, but also to:
-
-* Identify structural issues
-* Improve readability and maintainability
-* Apply modern best practices where appropriate
-
-Make thoughtful decisions about what should (and should not) be refactored
-
-You are free to refactor, restructure, or modernize the project as you see fit, as long as you can clearly explain your reasoning and trade-offs during the technical discussion.
-
-## Installation
-
-This project is based on NextJS 13, and requires node 16.13.0 or higher.
-
-**Installation**
+```text
+app/
+  /api
+    /companies
+      route.ts
+  globals.css
+  head.tsx
+  layout.tsx
+  page.tsx
+components/
+  CompanyCard.tsx
+  CompaniesList.tsx
+lib/
+  /companies
+      normalize-companies.ts
+      mock-companies.ts
+      companies.ts
+  utils.ts
+public/
+  favicon.ico
+test/
+  api/
+    companies.route.test.ts
+  components/
+    CompanyCard.test.tsx
+    CompaniesList.test.tsx
+  lib/
+    normalize-companies.test.ts
+    utils.test.ts
+types/
+  index.ts
+  company.ts
 
 ```
-npm install
-```
 
-**Running the application**
+## Notes and trade-offs
 
-```
-npm run dev
-```
+1. I used a shallow folder structure instead of deeper feature nesting. For this scope, keeping the structure easy to scan felt more valuable than introducing extra nesting such as components/companies/.
 
-## Your assignment
+- Trade-off: It is slightly less optimized for future scale, but simpler to follow in a small take-home project. I would move toward a more feature-oriented structure if the feature surface grows.
 
-We are going to display a list of trending companies on our start page, your assigment is to create a list of companies that we can display on our start page. The design is not complete, but should give you a good idea on what direction to take. The code provided is functional, but it’s difficult to read and understand. It needs significant refactoring to improve its structure and maintainability.
+2. I treated the provided companies data as raw, inconsistent source data and added a small transformation layer to clean and prepare it before rendering. This lets the UI components stay focused on presentation instead of data cleanup.
 
-You can find a link to the Figma [here](https://www.figma.com/file/PWNtHgOgjeYYGmQIYpLkm4/Quartr?node-id=0%3A1&t=49UGjItn5gFyMAku-0).
+3. I kept the API contract stable instead of reshaping it for the UI. Even though the UI benefits from cleaner field names and derived values, I avoided changing the response shape directly because another client could depend on it.
 
-## Instructions
+- Trade-off: The frontend needs a small transformation step, but the API remains backward-compatible and safer to maintain.
 
-You can make any modifications or suggestions for modifications that you see fit. Fork this repository and deliver your results via a pull-request or send us an e-mail. You could also create a gist, for privacy reasons, and send us the link.
+4. Since the data is local and the transformation is synchronous, I kept getCompanies synchronous as well. I did not want to introduce async behavior before it was actually needed. This also allows the page to render without artificial loading or request error states.
 
-During a technical interview, we will discuss this task and have a closer look at the code together with you. You should be able to explain your considerations of the code implementation. 
+- Trade-off: This keeps the implementation simpler for the current assignment, but it is optimized for a static dataset rather than a real remote backend.
 
-## Completion time
+5. I removed the unnecessary async fetching flow for the page because the provided company data is hardcoded in the repo.
 
-The time you spend on this test is not limited. The idea is to take your time, respect the assignment, and send us the result when you are happy with it. But please let us know if there are circumstances delaying your submission of the code. 
+- Trade-off: This removes unnecessary loading, network, and error-handling complexity, but it also means the page is not modeling remote data fetching behavior.
 
-## What we expect
+6. I kept reusable components generic and screen-specific composition specific. “Trending” is treated as page context, not as a reusable component type. Components like CompanyCard and CompanyList stay generic, while the page stays specific to the current screen.
 
-- A clean and well-structured readable code, where it is easy to understand what is going on
-- Organizing the code in a way where every function or component is responsible for only one thing
-- Usage of Typescript, and good practices using interfaces where needed
+- Trade-off: This adds a little more separation up front, but makes the generic UI reusable for future contexts such as top companies or search results.
 
-## Appreciated with the implementation
+7. I passed data into presentational components instead of letting them fetch or own data directly. That keeps components easier to test and reuse, and keeps data concerns closer to the page boundary.
 
-⚠️ Those are not required, but can give you some advice how to make your task look even better.
+- Trade-off: There is a small amount of prop plumbing, but the separation of concerns is clearer.
 
-- Unit and functional tests: a 100% coverage is not necessary, just make them pertinent
-- Good accessibility practices
-- Usage of the state co-location pattern
+8. I did not add a dedicated loading.tsx or error.tsx route boundary. After removing unnecessary async fetching, the realistic failure modes are mostly missing or inconsistent fields rather than route-level or network failures.
 
-Technical constraints
+- Trade-off: There is no artificial route-level loading or error UI for failures that cannot happen in this version, so defensive handling is instead focused on incomplete or inconsistent data at the rendering boundary.
 
-- Use React 17+ and TypeScript
+9. Since the data is static, I did not add runtime request error handling. Instead, I added light defensive handling in the transformation and rendering layers for missing URLs, missing logos, missing events, and inconsistent strings.
+
+10. I used Tailwind CSS for styling to move quickly while still producing a polished and maintainable UI.
+
+- Trade-off: Tailwind CSS is a utility-first CSS framework, which can lead to larger CSS bundle sizes compared to using a CSS preprocessor or a CSS-in-JS solution. However, it is a popular choice for rapid UI development and provides a good balance of flexibility and performance.
+
+11. I added a small number of focused tests instead of trying to maximize coverage. I prioritized tests around the transformation logic and the most important rendering behavior.
+
+- Trade-off: Coverage is not exhaustive, but the test suite stays relevant and maintainable.
+
+12. I kept tests in a dedicated test/ folder rather than colocating them throughout the app.
+
+- Trade-off: Tests are slightly less colocated with the code they exercise, but easier to scan in a small project.
+
+13. If we kept the API route as the page’s client-side data source, the benefit would be preserving the current async boundary and explicitly handling loading, error, empty, and success states.
+
+- Trade-off: This would add complexity that is not really necessary for a hardcoded dataset.
+
+---
