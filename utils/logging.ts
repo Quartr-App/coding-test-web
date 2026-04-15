@@ -1,1 +1,1 @@
-export const logger = (message: string) => (process.env.NODE_ENV === "development") && console.log(message)
+export const logger = (message: unknown) => (process.env.NODE_ENV === "development") && console.log(message)
