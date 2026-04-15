@@ -3,6 +3,7 @@ import { Company } from "../types/company";
 import { logger } from "../utils/logging";
 
 export const useCompanies = () => {
+	const [retryCounter, setRetryCounter] = useState<number>(0);
 	const [fetchingCompanies, setFetchingCompanies] = useState<boolean>(true);
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 	const [companiesData, setCompaniesData] = useState<Company[]>([]);
@@ -39,12 +40,13 @@ export const useCompanies = () => {
 		return () => {
 			abortController.abort();
 		};
-	}, []);
+	}, [retryCounter]);
 
 	const retryRequest = () => {
 		setFetchingCompanies(true);
 		setErrorMessage(null);
 		setCompaniesData([]);
+		setRetryCounter(prev => prev + 1);
 	};
 
 	return [companiesData, fetchingCompanies, errorMessage, retryRequest] as const;
