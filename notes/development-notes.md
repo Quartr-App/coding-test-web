@@ -5,4 +5,5 @@
  - This work would pair perfectly with a component library framework
  - Consider Apollo if using Graphql endpoint for application wide caching and batching
  - Consider using Turbo or Yarn as package / project management from the early stages of development
- - Disabling postIntall for OBVIOUS reasons lol
+ - Disabling postIntall for reasons lol
+ - Ellipsis are annoying
