@@ -13,11 +13,7 @@ export const useCompanies = () => {
 
 		(async () => {
 			try {
-				// Add artificial delay to ensure skeleton shows
-				await new Promise(resolve => setTimeout(resolve, 2000));
-
-				const companiesResponse = await fetch("/api/companies?slow=5000", {
-				// const companiesResponse = await fetch("/api/companies", {
+				const companiesResponse = await fetch("/api/companies", {
 					signal: abortController.signal
 				});
 
