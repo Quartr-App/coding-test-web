@@ -6,11 +6,13 @@ import { Skeleton } from "boneyard-js/react"
 import { CompanyRows } from "./CompanyRow"
 import { useCompanies } from "../hooks/useCompanies"
 import { SubsectionHeading } from "./typography"
+import { CompanyRowsSkeleton } from "./CompanyRowSkeleton"
+import { ErrorMessage } from "./ErrorMessage"
 
-export type TrendingCompaniesProps = {}
+export interface TrendingCompaniesProps {}
 
 const TrendingCompaniesContainer = styled.div`
-  max-width: 1024px;
+  max-width: 768px;
   margin: 0 auto;
 `
 
@@ -21,9 +23,13 @@ export const TrendingCompanies: FC<Props<TrendingCompaniesProps>> = ({ }) => {
     <TrendingCompaniesContainer>
       <SubsectionHeading>Trending companies</SubsectionHeading>
 
-      <Skeleton name="trending-companies" loading={fetchingCompanies}>
-        <CompanyRows companies={companiesData} />
-      </Skeleton>
+      <br />
+
+      {errorMessage && <ErrorMessage message={errorMessage} />}
+
+      {!errorMessage && (fetchingCompanies || !companiesData.length) && <CompanyRowsSkeleton /> }
+
+      {!errorMessage && !!companiesData.length && <CompanyRows companies={companiesData} /> }
     </TrendingCompaniesContainer>
   )
 }

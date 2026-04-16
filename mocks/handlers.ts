@@ -3,11 +3,12 @@ import { RESP_COMPANIES } from './responses/companies';
 
 export const handlers = [
   http.get('/api/companies', async ({ request }) => {
-    const url = new URL(request.url)
-    const slowMode = url.searchParams.get('slow')
+    if (process.env.NODE_ENV !== "test") {
+      await delay(1000)
 
-    if (slowMode) {
-      await delay(parseInt(slowMode, 10))
+      if (Math.random() > 0.75) {
+        return HttpResponse.error()
+      }
     }
 
     return HttpResponse.json(RESP_COMPANIES);

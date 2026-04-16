@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { MSWInjection } from './MSWProvider';
+import { createGlobalStyle } from "styled-components";
+import { MSWInjection } from "./MSWProvider";
 
 import StyledComponentsRegistry from "./styledComponentsRegistry";
 
@@ -24,7 +24,11 @@ a {
 }
 `;
 
-export default function RootLayout({ children, }: { children: React.ReactNode; }) {
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<html lang="en">
 			<head>
@@ -35,9 +39,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode; }
 			<body>
 				<StyledComponentsRegistry>
 					<GlobalStyle />
-					<MSWInjection>
-						{children}
-					</MSWInjection>
+					<MSWInjection>{children}</MSWInjection>
 				</StyledComponentsRegistry>
 			</body>
 		</html>
