@@ -20,6 +20,6 @@ export const CompanyRowSkeleton: FC<Props<{}>> = () =>
 
 export const CompanyRowsSkeleton: FC<Props<{}>> = () =>
   <>
-    {Array.from({ length: 3 }, () => <CompanyRowSkeleton key={Math.random()} />)}
+    {Array.from({ length: 3 }, (_, i) => <CompanyRowSkeleton key={i} />)}
   </>
 

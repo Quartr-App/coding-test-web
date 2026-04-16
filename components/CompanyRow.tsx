@@ -3,7 +3,6 @@ import styled from "styled-components"
 import type { Company } from "../types/company"
 
 import { FunctionComponent as FC, PropsWithChildren as Props } from "react"
-import { Image } from "next/image"
 
 import { InterSubheading, TitleHeading, TitleSmall } from "./typography"
 import { companyNameInitials } from "../utils/string"
@@ -65,7 +64,7 @@ export const CompanyRow: FC<Props<CompanyRowProps>> = ({ infoUrl, iconUrl, compa
   <CompanyListItemRow href={infoUrl} target="_blank" rel="noopener noreferrer">
     <CompanyListItemIcon>
       {iconUrl
-        ? <Image src={iconUrl} alt={`${companyName} icon`} />
+        ? <img src={iconUrl} alt={`${companyName} icon`} width={40} height={40} />
         : <InterSubheading>{companyNameInitials(companyName)}</InterSubheading>
       }
     </CompanyListItemIcon>

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 import { FunctionComponent as FC, PropsWithChildren as Props } from "react"
-import { Skeleton } from "boneyard-js/react"
 
 import { CompanyRows } from "./CompanyRow"
 import { useCompanies } from "../hooks/useCompanies"

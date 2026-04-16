@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitest/config'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({ plugins: [['@swc/plugin-styled-components', {}]] })],
   test: {
     environment: 'jsdom',
     exclude: [".direnv", "node_modules"],
-    setupFiles: './setupTests.js',
+    setupFiles: './setupTests.ts',
   },
 })

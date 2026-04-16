@@ -9,3 +9,4 @@
  - Ellipsis are annoying
  - Implement viable chaos engine with MSW
  - Boneyard implementation issues with MSW ( potential race condition )
+ - No Image component for this test since this could require backend infra

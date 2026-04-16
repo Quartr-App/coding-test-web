@@ -1,3 +1,5 @@
+import Events from "events"
+
 import { describe, it, expect, beforeEach } from "vitest"
 import { StrictMode } from 'react';
 import { renderHook, waitFor } from '@testing-library/react';
@@ -14,6 +16,13 @@ const RET = {
 } as const
 
 describe('useCompanies', () => {
+  beforeEach(() => {
+    if (typeof Events.setMaxListeners === 'function') {
+      // Specifically set to handle the abort controller subscriptions
+      Events.setMaxListeners(20);
+    }
+  });
+
   it('should handle React Strict Mode double mount correctly', async () => {
     let requestCount = 0;
 

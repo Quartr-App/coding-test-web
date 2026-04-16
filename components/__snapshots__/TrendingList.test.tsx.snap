@@ -1,0 +1,199 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Matches snapshot > Default 1`] = `
+<div>
+  <div
+    class="TrendingList__TrendingCompaniesContainer-sc-4af282c4-0 lbeuFb"
+  >
+    <h5
+      class="typography__InterSubheading-sc-31cfe98e-1 typography__SubsectionHeading-sc-31cfe98e-5 kvMjSF juKdgO"
+    >
+      Trending companies
+    </h5>
+    <br />
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Matches snapshot > Error 1`] = `
+<div>
+  <div
+    class="TrendingList__TrendingCompaniesContainer-sc-4af282c4-0 lbeuFb"
+  >
+    <h5
+      class="typography__InterSubheading-sc-31cfe98e-1 typography__SubsectionHeading-sc-31cfe98e-5 kvMjSF juKdgO"
+    >
+      Trending companies
+    </h5>
+    <br />
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Matches snapshot > Loading 1`] = `
+<div>
+  <div
+    class="TrendingList__TrendingCompaniesContainer-sc-4af282c4-0 lbeuFb"
+  >
+    <h5
+      class="typography__InterSubheading-sc-31cfe98e-1 typography__SubsectionHeading-sc-31cfe98e-5 kvMjSF juKdgO"
+    >
+      Trending companies
+    </h5>
+    <br />
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 CompanyRowSkeleton__CompanyListItemRowSkeleton-sc-144b41c2-0 iSIlf"
+    >
+      <div
+        class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonIcon-sc-aa028b62-3 wYATU cjqKaF"
+      />
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 CompanyRowSkeleton__CompanyListItemRowTextSkeleton-sc-144b41c2-1 cDrJNX"
+      >
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonTitle-sc-aa028b62-1 wYATU lfcnpI"
+        />
+        <div
+          class="SkeletonElements__SkeletonShimmer-sc-aa028b62-0 SkeletonElements__SkeletonSmall-sc-aa028b62-2 wYATU deuQej"
+        />
+      </div>
+    </a>
+  </div>
+</div>
+`;

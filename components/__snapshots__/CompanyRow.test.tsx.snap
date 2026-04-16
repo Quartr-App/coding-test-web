@@ -1,0 +1,424 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Matches snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <a
+        class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+        href="https://www.okea.no/about/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+        >
+          <img
+            alt="OKEA icon"
+            height="40"
+            src="https://files.quartr.com/company-logos/d0ba4-2022-12-14-09-26-56.png"
+            width="40"
+          />
+        </div>
+        <div
+          class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+        >
+          <h4
+            class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+          >
+            OKEA
+          </h4>
+          <small
+            class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+          >
+            OKEA, an oil and gas company, engages in the development and production of oil and gas in the Norwegian continental shelf.
+          </small>
+        </div>
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+        >
+          ›
+        </h5>
+      </a>
+      <a
+        class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+        href="https://www.masoval.no/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+        >
+          <h5
+            class="typography__InterSubheading-sc-31cfe98e-1 kvMjSF"
+          >
+            Mås
+          </h5>
+        </div>
+        <div
+          class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+        >
+          <h4
+            class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+          >
+            Måsøval 
+          </h4>
+          <small
+            class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+          >
+            Måsøval AS is a Norwegian aquaculture company that focuses on the production and marketing of farmed salmon. The company was founded in 1973 and operates under the parent company Måsøval Eiendom AS.
+          </small>
+        </div>
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+        >
+          ›
+        </h5>
+      </a>
+      <a
+        class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+        href="https://magnoraasa.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+        >
+          <img
+            alt="Magnora  icon"
+            height="40"
+            src="https://files.quartr.com/company-logos/3e88c-2022-12-14-09-32-50.png"
+            width="40"
+          />
+        </div>
+        <div
+          class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+        >
+          <h4
+            class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+          >
+            Magnora 
+          </h4>
+          <small
+            class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+          >
+            Magnora ASA operates as a renewable energy development company. It primarily focuses on developing wind and solar PV projects. The company also hold license agreements with the Dana Western Isles and Shell Penguins FPSO. Magnora ASA was incorporated in 2001 and is based in Oslo, Norway.
+          </small>
+        </div>
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+        >
+          ›
+        </h5>
+      </a>
+      <a
+        class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+        href="https://mvestwater.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+        >
+          <h5
+            class="typography__InterSubheading-sc-31cfe98e-1 kvMjSF"
+          >
+            M
+          </h5>
+        </div>
+        <div
+          class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+        >
+          <h4
+            class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+          >
+            M Vest Water 
+          </h4>
+          <small
+            class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+          >
+            M Vest Water AS develops and sells wastewater treatment solutions. The company offers NorwaCo, an absorbent media used in demountable BOD reduction systems; NorwaFloc, a natural and biodegradable combined flocculant/coagulant; NorwaPol, a polishing reactor; and NorwaMix, a modular and mobile production and dosing unit. It serves upstream and downstream oil and gas, fishing and fish-farming, sludge dewatering, municipal, mining, pulp and paper industries. The company primarily operates in Norway; the Middle East; China, Japan; Malaysia. M Vest Water AS was incorporated in 2017.
+          </small>
+        </div>
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+        >
+          ›
+        </h5>
+      </a>
+      <a
+        class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+        href="https://www.atria.fi/en/group/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+        >
+          <img
+            alt="Atria Oyj icon"
+            height="40"
+            src="https://files.quartr.com/company-logos/7e4d2-2022-12-14-03-28-48.png"
+            width="40"
+          />
+        </div>
+        <div
+          class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+        >
+          <h4
+            class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+          >
+            Atria Oyj
+          </h4>
+          <small
+            class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+          >
+            Atria Oyj, together with its subsidiaries, produces and markets meat and food products. It offers fresh and processed poultry, beef and pork, prepared foods, fish products, sausages and deli-meats in Finland, Sweden, Denmark, Estonia and Russia. The company also provides retail delicatessen products to Altia group's supermarkets. Atria Oyj was founded in 1903 and is headquartered in Seinäjoki, Finland.
+
+
+          </small>
+        </div>
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+        >
+          ›
+        </h5>
+      </a>
+    </div>
+  </body>,
+  "container": <div>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+      href="https://www.okea.no/about/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+      >
+        <img
+          alt="OKEA icon"
+          height="40"
+          src="https://files.quartr.com/company-logos/d0ba4-2022-12-14-09-26-56.png"
+          width="40"
+        />
+      </div>
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+      >
+        <h4
+          class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+        >
+          OKEA
+        </h4>
+        <small
+          class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+        >
+          OKEA, an oil and gas company, engages in the development and production of oil and gas in the Norwegian continental shelf.
+        </small>
+      </div>
+      <h5
+        class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+      >
+        ›
+      </h5>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+      href="https://www.masoval.no/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+      >
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 kvMjSF"
+        >
+          Mås
+        </h5>
+      </div>
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+      >
+        <h4
+          class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+        >
+          Måsøval 
+        </h4>
+        <small
+          class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+        >
+          Måsøval AS is a Norwegian aquaculture company that focuses on the production and marketing of farmed salmon. The company was founded in 1973 and operates under the parent company Måsøval Eiendom AS.
+        </small>
+      </div>
+      <h5
+        class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+      >
+        ›
+      </h5>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+      href="https://magnoraasa.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+      >
+        <img
+          alt="Magnora  icon"
+          height="40"
+          src="https://files.quartr.com/company-logos/3e88c-2022-12-14-09-32-50.png"
+          width="40"
+        />
+      </div>
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+      >
+        <h4
+          class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+        >
+          Magnora 
+        </h4>
+        <small
+          class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+        >
+          Magnora ASA operates as a renewable energy development company. It primarily focuses on developing wind and solar PV projects. The company also hold license agreements with the Dana Western Isles and Shell Penguins FPSO. Magnora ASA was incorporated in 2001 and is based in Oslo, Norway.
+        </small>
+      </div>
+      <h5
+        class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+      >
+        ›
+      </h5>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+      href="https://mvestwater.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+      >
+        <h5
+          class="typography__InterSubheading-sc-31cfe98e-1 kvMjSF"
+        >
+          M
+        </h5>
+      </div>
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+      >
+        <h4
+          class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+        >
+          M Vest Water 
+        </h4>
+        <small
+          class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+        >
+          M Vest Water AS develops and sells wastewater treatment solutions. The company offers NorwaCo, an absorbent media used in demountable BOD reduction systems; NorwaFloc, a natural and biodegradable combined flocculant/coagulant; NorwaPol, a polishing reactor; and NorwaMix, a modular and mobile production and dosing unit. It serves upstream and downstream oil and gas, fishing and fish-farming, sludge dewatering, municipal, mining, pulp and paper industries. The company primarily operates in Norway; the Middle East; China, Japan; Malaysia. M Vest Water AS was incorporated in 2017.
+        </small>
+      </div>
+      <h5
+        class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+      >
+        ›
+      </h5>
+    </a>
+    <a
+      class="CompanyRow__CompanyListItemRow-sc-4da57fc7-0 iSIlf"
+      href="https://www.atria.fi/en/group/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <div
+        class="CompanyRow__CompanyListItemIcon-sc-4da57fc7-1 jzjSgN"
+      >
+        <img
+          alt="Atria Oyj icon"
+          height="40"
+          src="https://files.quartr.com/company-logos/7e4d2-2022-12-14-03-28-48.png"
+          width="40"
+        />
+      </div>
+      <div
+        class="CompanyRow__CompanyListItemRowText-sc-4da57fc7-2 cDrJNX"
+      >
+        <h4
+          class="typography__InterHeading-sc-31cfe98e-0 typography__TitleHeading-sc-31cfe98e-6 sgwBE fMjrGu"
+        >
+          Atria Oyj
+        </h4>
+        <small
+          class="typography__InterSmall-sc-31cfe98e-2 typography__TitleSmall-sc-31cfe98e-7 hypBJJ jBoVGy"
+        >
+          Atria Oyj, together with its subsidiaries, produces and markets meat and food products. It offers fresh and processed poultry, beef and pork, prepared foods, fish products, sausages and deli-meats in Finland, Sweden, Denmark, Estonia and Russia. The company also provides retail delicatessen products to Altia group's supermarkets. Atria Oyj was founded in 1903 and is headquartered in Seinäjoki, Finland.
+
+
+        </small>
+      </div>
+      <h5
+        class="typography__InterSubheading-sc-31cfe98e-1 CompanyRow__CompanyListItemChevron-sc-4da57fc7-3 kvMjSF dRuQPr"
+      >
+        ›
+      </h5>
+    </a>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
