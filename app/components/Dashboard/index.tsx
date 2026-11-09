@@ -4,12 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { useCompanyData } from "../../../lib/api/fetchCompany";
 import Card from "../Card";
+import SkeletonCard from "../SkeletonCard";
 
 const DashBoard = () => {
   const { companyData, isLoading, error } = useCompanyData();
   const [openCompanyId, setOpenCompanyId] = useState<number | null>(null);
   if (isLoading) {
-    return <p>Loading companies...</p>;
+    return (
+      <div>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <SkeletonCard key={index} />
+        ))}
+      </div>
+    );
   }
 
   if (error) {
