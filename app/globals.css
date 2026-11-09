@@ -33,14 +33,30 @@ a {
 }
 
 .subtitle {
-  @apply font-inter text-gray-400;
+  @apply font-inter text-gray-400 tracking-wider;
 }
 
-.company-title {
+.card-title {
   @apply font-inter font-medium text-sm;
   color: #333;
 }
 
-.company-description {
+.card-subtitle {
+  @apply font-inter mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400;
+}
+
+.card-event-title {
+  @apply font-inter text-sm font-semibold text-gray-800;
+}
+
+.card-secondary-text {
   @apply font-inter text-[13px] text-gray-400;
+}
+
+.card-date {
+  @apply font-inter text-xs text-gray-400;
+}
+
+.card-link {
+  @apply font-inter text-sm font-medium hover:text-gray-400;
 }

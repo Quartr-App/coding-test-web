@@ -1,10 +1,16 @@
 export type companyType = {
   companyId: number;
   companyName: string;
+  companyCountry: string;
+  companyTicker: string;
   description: string;
   iconUrl: string;
   logoLightUrl: string;
   logoDarkUrl: string;
+  events: eventType[];
+};
+
+export type eventType = {
   eventId: number;
   eventTitle: string;
   eventDate: string;

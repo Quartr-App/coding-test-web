@@ -21,11 +21,7 @@ const DashBoard = () => {
       {companyData.map((company) => (
         <div key={company.companyId} className="">
           <Card
-            name={company.companyName}
-            description={company.description}
-            iconUrl={company.iconUrl}
-            logoLightUrl={company.logoLightUrl}
-            logoDarkUrl={company.logoDarkUrl}
+            company={company}
             isOpen={openCompanyId === company.companyId}
             onToggle={() => {
               setOpenCompanyId((prev) =>
