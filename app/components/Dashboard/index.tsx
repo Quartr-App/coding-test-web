@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useCompanyData } from "../../../lib/api/fetchCompany";
 import Card from "../Card";
