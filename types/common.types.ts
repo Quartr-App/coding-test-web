@@ -1,6 +1,7 @@
 export type companyType = {
   companyId: number;
   companyName: string;
+  infoUrl: string;
   companyCountry: string;
   companyTicker: string;
   description: string;

@@ -33,11 +33,11 @@ const EventTab = ({ company }: CardProps) => {
   }, [latestEvent]);
 
   return (
-    <div className="border-b border-gray-200 px-4 pb-5 pt-2">
+    <div className=" px-4 pb-5 pt-2">
       {latestEvent ? (
         <>
           <p className="card-subtitle">Latest event</p>
-          <div className="rounded-lg bg-gray-50 p-4">
+          <div className="rounded-lg bg-gray-50 p-4 h-[145px]">
             <div className="border-b border-gray-400 pb-2">
               <p className="card-event-title">{latestEvent.eventTitle}</p>
               <p className="card-date">

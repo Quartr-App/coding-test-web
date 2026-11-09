@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-  --font-inter: var(--font-inter-family);
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -29,34 +25,43 @@ a {
 }
 
 .title {
-  @apply font-inter font-bold text-2xl;
+  @apply font-bold text-2xl;
 }
 
 .subtitle {
-  @apply font-inter text-gray-400 tracking-wider;
+  @apply text-gray-400 tracking-wider;
 }
 
 .card-title {
-  @apply font-inter font-medium text-sm;
+  @apply font-medium text-sm;
   color: #333;
 }
 
 .card-subtitle {
-  @apply font-inter mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400;
+  @apply mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400;
 }
 
 .card-event-title {
-  @apply font-inter text-sm font-semibold text-gray-800;
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.card-primary-text {
+  @apply text-[13px];
+  color: #333;
 }
 
 .card-secondary-text {
-  @apply font-inter text-[13px] text-gray-400;
+  @apply text-[13px] text-gray-400;
 }
 
 .card-date {
-  @apply font-inter text-xs text-gray-400;
+  @apply text-xs text-gray-400;
 }
 
 .card-link {
-  @apply font-inter text-sm font-medium hover:text-gray-400;
+  @apply text-sm font-medium hover:text-gray-400;
+}
+
+.card-navigation {
+  @apply text-xs font-semibold;
 }

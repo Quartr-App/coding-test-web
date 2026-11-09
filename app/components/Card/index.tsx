@@ -1,5 +1,8 @@
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import { companyType, eventType } from "../../../types/common.types";
+import AboutTab from "./aboutTab";
+import CardNavigation from "./cardNavigation";
 import EventTab from "./eventTab";
 
 interface CardProps {
@@ -8,7 +11,10 @@ interface CardProps {
   onToggle: () => void;
 }
 
+type CardTab = "event" | "about";
+
 const Card = ({ company, isOpen, onToggle }: CardProps) => {
+  const [activeTab, setActiveTab] = useState<CardTab>("event");
   const logoUrls = [
     company.logoDarkUrl,
     company.logoLightUrl,
@@ -17,9 +23,11 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
   const [logoIndex, setLogoIndex] = useState(0);
   const currentLogo = logoUrls[logoIndex];
 
-  const latestEvent = [...(company.events ?? [])].sort(
-    (a, b) => new Date(b.eventDate).getTime() - new Date(a.eventDate).getTime(),
-  )[0];
+  useEffect(() => {
+    if (!isOpen) {
+      setActiveTab("event");
+    }
+  }, [isOpen]);
 
   return (
     <div className="border-b border-gray-200">
@@ -64,7 +72,14 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
       </div>
       {isOpen && (
         <>
-          <EventTab company={company} />
+          <CardNavigation activeTab={activeTab} onTabChange={setActiveTab} />
+          <div className="py-4 min-h-[230px]">
+            {activeTab === "event" ? (
+              <EventTab company={company} />
+            ) : (
+              <AboutTab company={company} />
+            )}
+          </div>
         </>
       )}
     </div>
