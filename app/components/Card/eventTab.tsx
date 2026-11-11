@@ -1,4 +1,5 @@
 "use client";
+
 import { companyType } from "../../../types/common.types";
 import { formatDateString } from "../../../utils/date";
 import { checkPdf } from "../../../lib/api/checkPdf";
@@ -38,7 +39,7 @@ const EventTab = ({ company }: CardProps) => {
         <>
           <p className="card-subtitle">Latest event</p>
           <div className="rounded-lg bg-gray-50 p-4 h-[145px]">
-            <div className="border-b border-gray-400 pb-2">
+            <div className="border-b border-company-gray-400 pb-2">
               <p className="card-event-title">{latestEvent.eventTitle}</p>
               <p className="card-date">
                 {formatDateString(latestEvent.eventDate)}
@@ -74,7 +75,7 @@ const EventTab = ({ company }: CardProps) => {
           </div>
         </>
       ) : (
-        <p className="text-sm text-gray-500">No events available.</p>
+        <p className="text-sm text-company-gray-400">No events available.</p>
       )}
     </div>
   );

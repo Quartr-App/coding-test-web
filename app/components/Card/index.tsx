@@ -28,7 +28,7 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-company-gray-200">
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
@@ -69,7 +69,7 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
         </div>
 
         <div
-          className={`text-3xl text-gray-400  transition-transform duration-900 ease-in-out ${isOpen ? "rotate-90" : ""}`}
+          className={`text-3xl text-company-gray-300 transition-transform duration-900 ease-in-out ${isOpen ? "rotate-90" : ""}`}
         >
           {"\u203A"}
         </div>

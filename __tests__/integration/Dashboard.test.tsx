@@ -81,14 +81,14 @@ describe("Dashboard", () => {
     expect(screen.getByText("Trending companies")).toBeInTheDocument();
     expect(screen.getByText("Test Company")).toBeInTheDocument();
     expect(screen.getByText("Another Company")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "EVENT" })).toBeNull();
+    expect(screen.queryByRole("tab", { name: "EVENTS" })).toBeNull();
 
     fireEvent.click(screen.getByText("Test Company"));
 
-    expect(screen.getByRole("button", { name: "EVENT" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "ABOUT" })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "EVENTS" })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: "ABOUT" })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole("button", { name: "ABOUT" }));
+    fireEvent.click(screen.getByRole("tab", { name: "ABOUT" }));
     expect(screen.getByText("Test company description")).toBeInTheDocument();
     expect(screen.queryByText("Another company description")).toBeNull();
   });
