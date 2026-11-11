@@ -68,7 +68,11 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
           </div>
         </div>
 
-        <div className="text-3xl text-gray-400">›</div>
+        <div
+          className={`text-3xl text-gray-400  transition-transform duration-900 ease-in-out ${isOpen ? "rotate-90" : ""}`}
+        >
+          ›
+        </div>
       </div>
       {isOpen && (
         <>
