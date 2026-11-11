@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { useCompanyData } from "../../../lib/api/fetchCompany";
 import Card from "../Card";
@@ -24,10 +23,10 @@ const DashBoard = () => {
   }
 
   return (
-    <div className="">
+    <>
       <h3 className="subtitle">Trending companies</h3>
       {companyData.map((company) => (
-        <div key={company.companyId} className="">
+        <div key={company.companyId}>
           <Card
             company={company}
             isOpen={openCompanyId === company.companyId}
@@ -39,7 +38,7 @@ const DashBoard = () => {
           />
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

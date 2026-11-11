@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { companyType, eventType } from "../../../types/common.types";
+import { companyType } from "../../../types/common.types";
 import AboutTab from "./aboutTab";
 import CardNavigation from "./cardNavigation";
 import EventTab from "./eventTab";
@@ -11,10 +11,8 @@ interface CardProps {
   onToggle: () => void;
 }
 
-type CardTab = "event" | "about";
-
 const Card = ({ company, isOpen, onToggle }: CardProps) => {
-  const [activeTab, setActiveTab] = useState<CardTab>("event");
+  const [activeTab, setActiveTab] = useState<"event" | "about">("event");
   const logoUrls = [
     company.logoDarkUrl,
     company.logoLightUrl,
@@ -31,9 +29,11 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
 
   return (
     <div className="border-b border-gray-200">
-      <div
+      <button
         onClick={onToggle}
-        className="flex gap-2 items-center justify-between py-4"
+        aria-expanded={isOpen}
+        aria-controls={`company-panel-${company.companyId}`}
+        className="flex w-full items-center justify-between gap-2 py-4 text-left"
       >
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white">
@@ -71,13 +71,18 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
         <div
           className={`text-3xl text-gray-400  transition-transform duration-900 ease-in-out ${isOpen ? "rotate-90" : ""}`}
         >
-          ›
+          {"\u203A"}
         </div>
-      </div>
+      </button>
       {isOpen && (
         <>
           <CardNavigation activeTab={activeTab} onTabChange={setActiveTab} />
-          <div className="py-4 min-h-[230px]">
+          <div
+            id={`panel-${activeTab}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${activeTab}`}
+            className="py-4 min-h-[230px]"
+          >
             {activeTab === "event" ? (
               <EventTab company={company} />
             ) : (

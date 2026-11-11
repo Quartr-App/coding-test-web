@@ -14,8 +14,11 @@ const CardNavigation = ({ activeTab, onTabChange }: CardNavigationProps) => {
     <div className="flex gap-6 border-b border-gray-200">
       {cardNavigationMenu.map((nav) => (
         <button
+          role="tab"
           key={nav.id}
           type="button"
+          aria-selected={activeTab === nav.id}
+          aria-controls={`panel-${nav.id}`}
           onClick={() => onTabChange(nav.id)}
           className={`pb-3 card-navigation transition-colors ${
             activeTab === nav.id

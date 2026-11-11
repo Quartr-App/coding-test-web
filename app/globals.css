@@ -29,7 +29,7 @@ a {
 }
 
 .subtitle {
-  @apply text-gray-400 tracking-wider;
+  @apply tracking-wider text-company-gray-400;
 }
 
 .card-title {
@@ -38,11 +38,11 @@ a {
 }
 
 .card-subtitle {
-  @apply mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400;
+  @apply mb-3 text-xs font-semibold uppercase tracking-wider text-company-gray-400;
 }
 
 .card-event-title {
-  @apply text-sm font-semibold text-gray-800;
+  @apply text-sm font-semibold text-company-gray-600;
 }
 
 .card-primary-text {
@@ -51,15 +51,15 @@ a {
 }
 
 .card-secondary-text {
-  @apply text-[13px] text-gray-400;
+  @apply text-[13px] text-company-gray-400;
 }
 
 .card-date {
-  @apply text-xs text-gray-400;
+  @apply text-xs text-company-gray-300;
 }
 
 .card-link {
-  @apply text-sm font-medium hover:text-gray-400;
+  @apply text-sm font-medium hover:text-company-gray-400;
 }
 
 .card-navigation {

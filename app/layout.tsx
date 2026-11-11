@@ -2,11 +2,6 @@ import "./globals.css";
 import { Inter } from "@next/font/google";
 import Providers from "./providers";
 
-const viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
-
 const inter = Inter({
   variable: "--font-inter-family",
   subsets: ["latin"],
