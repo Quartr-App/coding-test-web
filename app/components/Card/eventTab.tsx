@@ -10,8 +10,9 @@ interface CardProps {
 }
 
 const EventTab = ({ company }: CardProps) => {
-  const latestEvent = [...(company.events ?? [])].sort(
-    (a, b) => new Date(b.eventDate).getTime() - new Date(a.eventDate).getTime(),
+  const latestEvent = [...(company.events ?? [])].filter((event) => event.eventDate !== null)
+  .sort(
+    (a, b) => new Date(b.eventDate!).getTime() - new Date(a.eventDate!).getTime(),
   )[0];
 
   const [validReport, setValidReport] = useState(false);
@@ -34,7 +35,7 @@ const EventTab = ({ company }: CardProps) => {
   }, [latestEvent]);
 
   return (
-    <div id="tab-event" className="px-4 pb-5 pt-2">
+    <div className="px-4 pb-5 pt-2">
       {latestEvent ? (
         <>
           <p className="card-subtitle">Latest event</p>
@@ -42,14 +43,13 @@ const EventTab = ({ company }: CardProps) => {
             <div className="border-b border-company-gray-400 pb-2">
               <p className="card-event-title">{latestEvent.eventTitle}</p>
               <p className="card-date">
-                {formatDateString(latestEvent.eventDate)}
+                {formatDateString(latestEvent.eventDate!)}
               </p>
             </div>
             <div className="mt-4 flex flex-col gap-3 ">
               {validReport && (
                 <a
-                  href={latestEvent.reportUrl}
-                  aria-label="Annual / Interim Report"
+                  href={latestEvent.reportUrl!}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 card-link"
@@ -61,7 +61,7 @@ const EventTab = ({ company }: CardProps) => {
 
               {validPdf && (
                 <a
-                  href={latestEvent.pdfUrl}
+                  href={latestEvent.pdfUrl!}
                   aria-label="Presentation PDF"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import EventTab from "../../app/components/Card/eventTab";
 import { checkPdf } from "../../lib/api/checkPdf";
 import { companyType } from "../../types/common.types";
@@ -8,6 +8,15 @@ jest.mock("../../lib/api/checkPdf", () => ({
 }));
 
 const mockCheckPdf = jest.mocked(checkPdf);
+
+const createDeferred = <T,>() => {
+  let resolve!: (value: T) => void;
+  const promise = new Promise<T>((resolvePromise) => {
+    resolve = resolvePromise;
+  });
+
+  return { promise, resolve };
+};
 
 const company: companyType = {
   companyId: 1,
@@ -52,13 +61,22 @@ describe("EventTab", () => {
   });
 
   it("does not show PDF links when the files are invalid", async () => {
-    mockCheckPdf.mockResolvedValue(false);
+    const reportCheck = createDeferred<boolean>();
+    const presentationCheck = createDeferred<boolean>();
+    mockCheckPdf
+      .mockReturnValueOnce(reportCheck.promise)
+      .mockReturnValueOnce(presentationCheck.promise);
 
     render(<EventTab company={company} />);
 
-    await waitFor(() => {
-      expect(mockCheckPdf).toHaveBeenCalledTimes(2);
+    expect(mockCheckPdf).toHaveBeenCalledTimes(2);
+
+    await act(async () => {
+      reportCheck.resolve(false);
+      presentationCheck.resolve(false);
+      await Promise.all([reportCheck.promise, presentationCheck.promise]);
     });
+
     expect(
       screen.queryByRole("link", { name: "Annual / Interim Report" }),
     ).not.toBeInTheDocument();

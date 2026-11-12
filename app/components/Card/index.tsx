@@ -32,7 +32,6 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        aria-controls={`company-panel-${company.companyId}`}
         className="flex w-full items-center justify-between gap-2 py-4 text-left"
       >
         <div className="flex items-center gap-4">
@@ -78,9 +77,6 @@ const Card = ({ company, isOpen, onToggle }: CardProps) => {
         <>
           <CardNavigation activeTab={activeTab} onTabChange={setActiveTab} />
           <div
-            id={`panel-${activeTab}`}
-            role="tabpanel"
-            aria-labelledby={`tab-${activeTab}`}
             className="py-4 min-h-[230px]"
           >
             {activeTab === "event" ? (

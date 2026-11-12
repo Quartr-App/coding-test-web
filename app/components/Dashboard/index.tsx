@@ -24,7 +24,7 @@ const DashBoard = () => {
 
   return (
     <>
-      <h3 className="subtitle">Trending companies</h3>
+      <h2 className="subtitle">Trending companies</h2>
       {companyData.map((company) => (
         <div key={company.companyId}>
           <Card

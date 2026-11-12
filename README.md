@@ -23,44 +23,24 @@ A trending company dashboard built as a technical assignment. It displays compan
 
 - Node.js 18.14 or later and npm. Commands were checked with Node.js 20.20.2 and npm 10.8.2.
 
-## Setup
+## Getting Started
 
-From the project root, install the locked dependencies:
+Install dependencies and start the development server:
 
 ```bash
 npm ci
-```
-
-## Run Locally
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). If port 3000 is already in use, Next.js selects another available port and prints its URL in the terminal.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Production
-
-Build the application, then start the production server:
+## Build and Test
 
 ```bash
 npm run build
 npm run start
-```
-
-The production server uses port 3000 by default. Set the `PORT` environment variable to use another port.
-
-## Tests
-
-Run the Jest test suite:
-
-```bash
 npm test
 ```
-
-Tests are under `__tests__/` and cover the card components, Dashboard states, company data fetching, and PDF link checks. Network requests are mocked in tests.
 
 ## Project Structure
 
