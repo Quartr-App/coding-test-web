@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,4 +22,46 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.title {
+  @apply font-bold text-2xl;
+}
+
+.subtitle {
+  @apply tracking-wider text-company-gray-400;
+}
+
+.card-title {
+  @apply font-medium text-sm;
+  color: #333;
+}
+
+.card-subtitle {
+  @apply mb-3 text-xs font-semibold uppercase tracking-wider text-company-gray-400;
+}
+
+.card-event-title {
+  @apply text-sm font-semibold text-company-gray-600;
+}
+
+.card-primary-text {
+  @apply text-[13px];
+  color: #333;
+}
+
+.card-secondary-text {
+  @apply text-[13px] text-company-gray-400;
+}
+
+.card-date {
+  @apply text-xs text-company-gray-300;
+}
+
+.card-link {
+  @apply text-sm font-medium hover:text-company-gray-400;
+}
+
+.card-navigation {
+  @apply text-xs font-semibold;
 }
